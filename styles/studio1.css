@@ -1,0 +1,43 @@
+#logo {
+  height: 75%;
+  width: 75%;
+  margin-left: 10%;
+  margin-right: auto;
+}
+
+body { 
+	color: black;
+  padding-top: 70px; 
+  background-image: url('../images/studio54_bg_cropped.jpg');
+}
+
+/*@media only screen and (max-width: 320px) {
+   body { font-size: 2em; }
+
+}*/
+
+.party-date {
+	font-size: 100px;
+	font-family: 'Ceviche One', cursive;
+	color: black;
+	margin-left: 26%;
+}
+
+.navbar-nav > li:hover {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: black;
+  cursor: pointer; 
+}
+
+.navbar-nav > li > a:hover {
+   -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s; 
+}
+
+.photo {
+  height: 90%;
+}
+

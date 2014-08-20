@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://gridster.net/demos/expandable-widgets.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Demo » Expandable widgets » gridster.js</title>
+  <link rel="stylesheet" type="text/css" href="./gridster_files/jquery.gridster.css">
+  <link rel="stylesheet" type="text/css" href="./gridster_files/demo.css">
+<style type="text/css"> [data-col="18"] { left:1875px; }
+ [data-col="17"] { left:1765px; }
+ [data-col="16"] { left:1655px; }
+ [data-col="15"] { left:1545px; }
+ [data-col="14"] { left:1435px; }
+ [data-col="13"] { left:1325px; }
+ [data-col="12"] { left:1215px; }
+ [data-col="11"] { left:1105px; }
+ [data-col="10"] { left:995px; }
+ [data-col="9"] { left:885px; }
+ [data-col="8"] { left:775px; }
+ [data-col="7"] { left:665px; }
+ [data-col="6"] { left:555px; }
+ [data-col="5"] { left:445px; }
+ [data-col="4"] { left:335px; }
+ [data-col="3"] { left:225px; }
+ [data-col="2"] { left:115px; }
+ [data-col="1"] { left:5px; }
+ [data-row="204"] { top:22335px; }
+ [data-row="203"] { top:22225px; }
+ [data-row="202"] { top:22115px; }
+ [data-row="201"] { top:22005px; }
+ [data-row="200"] { top:21895px; }
+ [data-row="199"] { top:21785px; }
+ [data-row="198"] { top:21675px; }
+ [data-row="197"] { top:21565px; }
+ [data-row="196"] { top:21455px; }
+ [data-row="195"] { top:21345px; }
+ [data-row="194"] { top:21235px; }
+ [data-row="193"] { top:21125px; }
+ [data-row="192"] { top:21015px; }
+ [data-row="191"] { top:20905px; }
+ [data-row="190"] { top:20795px; }
+ [data-row="189"] { top:20685px; }
+ [data-row="188"] { top:20575px; }
+ [data-row="187"] { top:20465px; }
+ [data-row="186"] { top:20355px; }
+ [data-row="185"] { top:20245px; }
+ [data-row="184"] { top:20135px; }
+ [data-row="183"] { top:20025px; }
+ [data-row="182"] { top:19915px; }
+ [data-row="181"] { top:19805px; }
+ [data-row="180"] { top:19695px; }
+ [data-row="179"] { top:19585px; }
+ [data-row="178"] { top:19475px; }
+ [data-row="177"] { top:19365px; }
+ [data-row="176"] { top:19255px; }
+ [data-row="175"] { top:19145px; }
+ [data-row="174"] { top:19035px; }
+ [data-row="173"] { top:18925px; }
+ [data-row="172"] { top:18815px; }
+ [data-row="171"] { top:18705px; }
+ [data-row="170"] { top:18595px; }
+ [data-row="169"] { top:18485px; }
+ [data-row="168"] { top:18375px; }
+ [data-row="167"] { top:18265px; }
+ [data-row="166"] { top:18155px; }
+ [data-row="165"] { top:18045px; }
+ [data-row="164"] { top:17935px; }
+ [data-row="163"] { top:17825px; }
+ [data-row="162"] { top:17715px; }
+ [data-row="161"] { top:17605px; }
+ [data-row="160"] { top:17495px; }
+ [data-row="159"] { top:17385px; }
+ [data-row="158"] { top:17275px; }
+ [data-row="157"] { top:17165px; }
+ [data-row="156"] { top:17055px; }
+ [data-row="155"] { top:16945px; }
+ [data-row="154"] { top:16835px; }
+ [data-row="153"] { top:16725px; }
+ [data-row="152"] { top:16615px; }
+ [data-row="151"] { top:16505px; }
+ [data-row="150"] { top:16395px; }
+ [data-row="149"] { top:16285px; }
+ [data-row="148"] { top:16175px; }
+ [data-row="147"] { top:16065px; }
+ [data-row="146"] { top:15955px; }
+ [data-row="145"] { top:15845px; }
+ [data-row="144"] { top:15735px; }
+ [data-row="143"] { top:15625px; }
+ [data-row="142"] { top:15515px; }
+ [data-row="141"] { top:15405px; }
+ [data-row="140"] { top:15295px; }
+ [data-row="139"] { top:15185px; }
+ [data-row="138"] { top:15075px; }
+ [data-row="137"] { top:14965px; }
+ [data-row="136"] { top:14855px; }
+ [data-row="135"] { top:14745px; }
+ [data-row="134"] { top:14635px; }
+ [data-row="133"] { top:14525px; }
+ [data-row="132"] { top:14415px; }
+ [data-row="131"] { top:14305px; }
+ [data-row="130"] { top:14195px; }
+ [data-row="129"] { top:14085px; }
+ [data-row="128"] { top:13975px; }
+ [data-row="127"] { top:13865px; }
+ [data-row="126"] { top:13755px; }
+ [data-row="125"] { top:13645px; }
+ [data-row="124"] { top:13535px; }
+ [data-row="123"] { top:13425px; }
+ [data-row="122"] { top:13315px; }
+ [data-row="121"] { top:13205px; }
+ [data-row="120"] { top:13095px; }
+ [data-row="119"] { top:12985px; }
+ [data-row="118"] { top:12875px; }
+ [data-row="117"] { top:12765px; }
+ [data-row="116"] { top:12655px; }
+ [data-row="115"] { top:12545px; }
+ [data-row="114"] { top:12435px; }
+ [data-row="113"] { top:12325px; }
+ [data-row="112"] { top:12215px; }
+ [data-row="111"] { top:12105px; }
+ [data-row="110"] { top:11995px; }
+ [data-row="109"] { top:11885px; }
+ [data-row="108"] { top:11775px; }
+ [data-row="107"] { top:11665px; }
+ [data-row="106"] { top:11555px; }
+ [data-row="105"] { top:11445px; }
+ [data-row="104"] { top:11335px; }
+ [data-row="103"] { top:11225px; }
+ [data-row="102"] { top:11115px; }
+ [data-row="101"] { top:11005px; }
+ [data-row="100"] { top:10895px; }
+ [data-row="99"] { top:10785px; }
+ [data-row="98"] { top:10675px; }
+ [data-row="97"] { top:10565px; }
+ [data-row="96"] { top:10455px; }
+ [data-row="95"] { top:10345px; }
+ [data-row="94"] { top:10235px; }
+ [data-row="93"] { top:10125px; }
+ [data-row="92"] { top:10015px; }
+ [data-row="91"] { top:9905px; }
+ [data-row="90"] { top:9795px; }
+ [data-row="89"] { top:9685px; }
+ [data-row="88"] { top:9575px; }
+ [data-row="87"] { top:9465px; }
+ [data-row="86"] { top:9355px; }
+ [data-row="85"] { top:9245px; }
+ [data-row="84"] { top:9135px; }
+ [data-row="83"] { top:9025px; }
+ [data-row="82"] { top:8915px; }
+ [data-row="81"] { top:8805px; }
+ [data-row="80"] { top:8695px; }
+ [data-row="79"] { top:8585px; }
+ [data-row="78"] { top:8475px; }
+ [data-row="77"] { top:8365px; }
+ [data-row="76"] { top:8255px; }
+ [data-row="75"] { top:8145px; }
+ [data-row="74"] { top:8035px; }
+ [data-row="73"] { top:7925px; }
+ [data-row="72"] { top:7815px; }
+ [data-row="71"] { top:7705px; }
+ [data-row="70"] { top:7595px; }
+ [data-row="69"] { top:7485px; }
+ [data-row="68"] { top:7375px; }
+ [data-row="67"] { top:7265px; }
+ [data-row="66"] { top:7155px; }
+ [data-row="65"] { top:7045px; }
+ [data-row="64"] { top:6935px; }
+ [data-row="63"] { top:6825px; }
+ [data-row="62"] { top:6715px; }
+ [data-row="61"] { top:6605px; }
+ [data-row="60"] { top:6495px; }
+ [data-row="59"] { top:6385px; }
+ [data-row="58"] { top:6275px; }
+ [data-row="57"] { top:6165px; }
+ [data-row="56"] { top:6055px; }
+ [data-row="55"] { top:5945px; }
+ [data-row="54"] { top:5835px; }
+ [data-row="53"] { top:5725px; }
+ [data-row="52"] { top:5615px; }
+ [data-row="51"] { top:5505px; }
+ [data-row="50"] { top:5395px; }
+ [data-row="49"] { top:5285px; }
+ [data-row="48"] { top:5175px; }
+ [data-row="47"] { top:5065px; }
+ [data-row="46"] { top:4955px; }
+ [data-row="45"] { top:4845px; }
+ [data-row="44"] { top:4735px; }
+ [data-row="43"] { top:4625px; }
+ [data-row="42"] { top:4515px; }
+ [data-row="41"] { top:4405px; }
+ [data-row="40"] { top:4295px; }
+ [data-row="39"] { top:4185px; }
+ [data-row="38"] { top:4075px; }
+ [data-row="37"] { top:3965px; }
+ [data-row="36"] { top:3855px; }
+ [data-row="35"] { top:3745px; }
+ [data-row="34"] { top:3635px; }
+ [data-row="33"] { top:3525px; }
+ [data-row="32"] { top:3415px; }
+ [data-row="31"] { top:3305px; }
+ [data-row="30"] { top:3195px; }
+ [data-row="29"] { top:3085px; }
+ [data-row="28"] { top:2975px; }
+ [data-row="27"] { top:2865px; }
+ [data-row="26"] { top:2755px; }
+ [data-row="25"] { top:2645px; }
+ [data-row="24"] { top:2535px; }
+ [data-row="23"] { top:2425px; }
+ [data-row="22"] { top:2315px; }
+ [data-row="21"] { top:2205px; }
+ [data-row="20"] { top:2095px; }
+ [data-row="19"] { top:1985px; }
+ [data-row="18"] { top:1875px; }
+ [data-row="17"] { top:1765px; }
+ [data-row="16"] { top:1655px; }
+ [data-row="15"] { top:1545px; }
+ [data-row="14"] { top:1435px; }
+ [data-row="13"] { top:1325px; }
+ [data-row="12"] { top:1215px; }
+ [data-row="11"] { top:1105px; }
+ [data-row="10"] { top:995px; }
+ [data-row="9"] { top:885px; }
+ [data-row="8"] { top:775px; }
+ [data-row="7"] { top:665px; }
+ [data-row="6"] { top:555px; }
+ [data-row="5"] { top:445px; }
+ [data-row="4"] { top:335px; }
+ [data-row="3"] { top:225px; }
+ [data-row="2"] { top:115px; }
+ [data-row="1"] { top:5px; }
+ [data-sizey="1"] { height:100px; }
+ [data-sizey="2"] { height:210px; }
+ [data-sizey="3"] { height:320px; }
+ [data-sizey="4"] { height:430px; }
+ [data-sizey="5"] { height:540px; }
+ [data-sizey="6"] { height:650px; }
+ [data-sizey="7"] { height:760px; }
+ [data-sizey="8"] { height:870px; }
+ [data-sizey="9"] { height:980px; }
+ [data-sizey="10"] { height:1090px; }
+ [data-sizey="11"] { height:1200px; }
+ [data-sizey="12"] { height:1310px; }
+ [data-sizey="13"] { height:1420px; }
+ [data-sizey="14"] { height:1530px; }
+ [data-sizey="15"] { height:1640px; }
+ [data-sizey="16"] { height:1750px; }
+ [data-sizey="17"] { height:1860px; }
+ [data-sizey="18"] { height:1970px; }
+ [data-sizey="19"] { height:2080px; }
+ [data-sizey="20"] { height:2190px; }
+ [data-sizey="21"] { height:2300px; }
+ [data-sizey="22"] { height:2410px; }
+ [data-sizey="23"] { height:2520px; }
+ [data-sizey="24"] { height:2630px; }
+ [data-sizey="25"] { height:2740px; }
+ [data-sizey="26"] { height:2850px; }
+ [data-sizey="27"] { height:2960px; }
+ [data-sizey="28"] { height:3070px; }
+ [data-sizey="29"] { height:3180px; }
+ [data-sizey="30"] { height:3290px; }
+ [data-sizey="31"] { height:3400px; }
+ [data-sizey="32"] { height:3510px; }
+ [data-sizey="33"] { height:3620px; }
+ [data-sizey="34"] { height:3730px; }
+ [data-sizey="35"] { height:3840px; }
+ [data-sizey="36"] { height:3950px; }
+ [data-sizey="37"] { height:4060px; }
+ [data-sizey="38"] { height:4170px; }
+ [data-sizey="39"] { height:4280px; }
+ [data-sizey="40"] { height:4390px; }
+ [data-sizey="41"] { height:4500px; }
+ [data-sizey="42"] { height:4610px; }
+ [data-sizey="43"] { height:4720px; }
+ [data-sizey="44"] { height:4830px; }
+ [data-sizey="45"] { height:4940px; }
+ [data-sizey="46"] { height:5050px; }
+ [data-sizey="47"] { height:5160px; }
+ [data-sizey="48"] { height:5270px; }
+ [data-sizey="49"] { height:5380px; }
+ [data-sizey="50"] { height:5490px; }
+ [data-sizey="51"] { height:5600px; }
+ [data-sizey="52"] { height:5710px; }
+ [data-sizey="53"] { height:5820px; }
+ [data-sizey="54"] { height:5930px; }
+ [data-sizey="55"] { height:6040px; }
+ [data-sizey="56"] { height:6150px; }
+ [data-sizey="57"] { height:6260px; }
+ [data-sizey="58"] { height:6370px; }
+ [data-sizey="59"] { height:6480px; }
+ [data-sizey="60"] { height:6590px; }
+ [data-sizey="61"] { height:6700px; }
+ [data-sizey="62"] { height:6810px; }
+ [data-sizey="63"] { height:6920px; }
+ [data-sizey="64"] { height:7030px; }
+ [data-sizey="65"] { height:7140px; }
+ [data-sizey="66"] { height:7250px; }
+ [data-sizey="67"] { height:7360px; }
+ [data-sizey="68"] { height:7470px; }
+ [data-sizey="69"] { height:7580px; }
+ [data-sizey="70"] { height:7690px; }
+ [data-sizey="71"] { height:7800px; }
+ [data-sizey="72"] { height:7910px; }
+ [data-sizey="73"] { height:8020px; }
+ [data-sizey="74"] { height:8130px; }
+ [data-sizey="75"] { height:8240px; }
+ [data-sizey="76"] { height:8350px; }
+ [data-sizey="77"] { height:8460px; }
+ [data-sizey="78"] { height:8570px; }
+ [data-sizey="79"] { height:8680px; }
+ [data-sizey="80"] { height:8790px; }
+ [data-sizey="81"] { height:8900px; }
+ [data-sizey="82"] { height:9010px; }
+ [data-sizey="83"] { height:9120px; }
+ [data-sizey="84"] { height:9230px; }
+ [data-sizey="85"] { height:9340px; }
+ [data-sizey="86"] { height:9450px; }
+ [data-sizey="87"] { height:9560px; }
+ [data-sizey="88"] { height:9670px; }
+ [data-sizey="89"] { height:9780px; }
+ [data-sizey="90"] { height:9890px; }
+ [data-sizey="91"] { height:10000px; }
+ [data-sizey="92"] { height:10110px; }
+ [data-sizey="93"] { height:10220px; }
+ [data-sizey="94"] { height:10330px; }
+ [data-sizey="95"] { height:10440px; }
+ [data-sizey="96"] { height:10550px; }
+ [data-sizey="97"] { height:10660px; }
+ [data-sizey="98"] { height:10770px; }
+ [data-sizey="99"] { height:10880px; }
+ [data-sizey="100"] { height:10990px; }
+ [data-sizey="101"] { height:11100px; }
+ [data-sizey="102"] { height:11210px; }
+ [data-sizey="103"] { height:11320px; }
+ [data-sizey="104"] { height:11430px; }
+ [data-sizey="105"] { height:11540px; }
+ [data-sizey="106"] { height:11650px; }
+ [data-sizey="107"] { height:11760px; }
+ [data-sizey="108"] { height:11870px; }
+ [data-sizey="109"] { height:11980px; }
+ [data-sizey="110"] { height:12090px; }
+ [data-sizey="111"] { height:12200px; }
+ [data-sizey="112"] { height:12310px; }
+ [data-sizey="113"] { height:12420px; }
+ [data-sizey="114"] { height:12530px; }
+ [data-sizey="115"] { height:12640px; }
+ [data-sizey="116"] { height:12750px; }
+ [data-sizey="117"] { height:12860px; }
+ [data-sizey="118"] { height:12970px; }
+ [data-sizey="119"] { height:13080px; }
+ [data-sizey="120"] { height:13190px; }
+ [data-sizey="121"] { height:13300px; }
+ [data-sizey="122"] { height:13410px; }
+ [data-sizey="123"] { height:13520px; }
+ [data-sizey="124"] { height:13630px; }
+ [data-sizey="125"] { height:13740px; }
+ [data-sizey="126"] { height:13850px; }
+ [data-sizey="127"] { height:13960px; }
+ [data-sizey="128"] { height:14070px; }
+ [data-sizey="129"] { height:14180px; }
+ [data-sizey="130"] { height:14290px; }
+ [data-sizey="131"] { height:14400px; }
+ [data-sizey="132"] { height:14510px; }
+ [data-sizey="133"] { height:14620px; }
+ [data-sizey="134"] { height:14730px; }
+ [data-sizey="135"] { height:14840px; }
+ [data-sizey="136"] { height:14950px; }
+ [data-sizey="137"] { height:15060px; }
+ [data-sizey="138"] { height:15170px; }
+ [data-sizey="139"] { height:15280px; }
+ [data-sizey="140"] { height:15390px; }
+ [data-sizey="141"] { height:15500px; }
+ [data-sizey="142"] { height:15610px; }
+ [data-sizey="143"] { height:15720px; }
+ [data-sizey="144"] { height:15830px; }
+ [data-sizey="145"] { height:15940px; }
+ [data-sizey="146"] { height:16050px; }
+ [data-sizey="147"] { height:16160px; }
+ [data-sizey="148"] { height:16270px; }
+ [data-sizey="149"] { height:16380px; }
+ [data-sizey="150"] { height:16490px; }
+ [data-sizey="151"] { height:16600px; }
+ [data-sizey="152"] { height:16710px; }
+ [data-sizey="153"] { height:16820px; }
+ [data-sizey="154"] { height:16930px; }
+ [data-sizey="155"] { height:17040px; }
+ [data-sizey="156"] { height:17150px; }
+ [data-sizey="157"] { height:17260px; }
+ [data-sizey="158"] { height:17370px; }
+ [data-sizey="159"] { height:17480px; }
+ [data-sizey="160"] { height:17590px; }
+ [data-sizey="161"] { height:17700px; }
+ [data-sizey="162"] { height:17810px; }
+ [data-sizey="163"] { height:17920px; }
+ [data-sizey="164"] { height:18030px; }
+ [data-sizey="165"] { height:18140px; }
+ [data-sizey="166"] { height:18250px; }
+ [data-sizey="167"] { height:18360px; }
+ [data-sizey="168"] { height:18470px; }
+ [data-sizey="169"] { height:18580px; }
+ [data-sizey="170"] { height:18690px; }
+ [data-sizey="171"] { height:18800px; }
+ [data-sizey="172"] { height:18910px; }
+ [data-sizey="173"] { height:19020px; }
+ [data-sizey="174"] { height:19130px; }
+ [data-sizey="175"] { height:19240px; }
+ [data-sizey="176"] { height:19350px; }
+ [data-sizey="177"] { height:19460px; }
+ [data-sizey="178"] { height:19570px; }
+ [data-sizey="179"] { height:19680px; }
+ [data-sizey="180"] { height:19790px; }
+ [data-sizey="181"] { height:19900px; }
+ [data-sizey="182"] { height:20010px; }
+ [data-sizey="183"] { height:20120px; }
+ [data-sizey="184"] { height:20230px; }
+ [data-sizey="185"] { height:20340px; }
+ [data-sizey="186"] { height:20450px; }
+ [data-sizey="187"] { height:20560px; }
+ [data-sizey="188"] { height:20670px; }
+ [data-sizey="189"] { height:20780px; }
+ [data-sizey="190"] { height:20890px; }
+ [data-sizey="191"] { height:21000px; }
+ [data-sizey="192"] { height:21110px; }
+ [data-sizey="193"] { height:21220px; }
+ [data-sizey="194"] { height:21330px; }
+ [data-sizey="195"] { height:21440px; }
+ [data-sizey="196"] { height:21550px; }
+ [data-sizey="197"] { height:21660px; }
+ [data-sizey="198"] { height:21770px; }
+ [data-sizey="199"] { height:21880px; }
+ [data-sizey="200"] { height:21990px; }
+ [data-sizey="201"] { height:22100px; }
+ [data-sizey="202"] { height:22210px; }
+ [data-sizey="203"] { height:22320px; }
+ [data-sizex="1"] { width:100px; }
+ [data-sizex="2"] { width:210px; }
+ [data-sizex="3"] { width:320px; }
+ [data-sizex="4"] { width:430px; }
+ [data-sizex="5"] { width:540px; }
+ [data-sizex="6"] { width:650px; }
+ [data-sizex="7"] { width:760px; }
+ [data-sizex="8"] { width:870px; }
+ [data-sizex="9"] { width:980px; }
+ [data-sizex="10"] { width:1090px; }
+ [data-sizex="11"] { width:1200px; }
+ [data-sizex="12"] { width:1310px; }
+ [data-sizex="13"] { width:1420px; }
+ [data-sizex="14"] { width:1530px; }
+ [data-sizex="15"] { width:1640px; }
+ [data-sizex="16"] { width:1750px; }
+ [data-sizex="17"] { width:1860px; }
+ #sc-widget { 
+    display: none; 
+ }
+</style></head>
+
+<body>
+
+  <h1>Expandable widgets</h1>
+
+  <p>Expand widgets when hover on them using <code>resize_widget</code> method.</p>
+
+
+  <div class="gridster ready">
+    <ul style="height: 330px; width: 440px; position: relative;">
+      <li data-row="1" data-col="1" data-sizex="1" data-sizey="1" class="gs-w">0
+        <div id="red" style="background-color: red; height: 75%; width: 50%; float: left; display: none;"></div>
+      </li>
+      <li data-row="2" data-col="1" data-sizex="1" data-sizey="1" class="gs-w">1</li>
+      <li data-row="3" data-col="1" data-sizex="1" data-sizey="1" class="gs-w">2</li>
+      <li data-row="4" data-col="1" data-sizex="1" data-sizey="1" class="gs-w">3</li>
+      <li data-row="1" data-col="2" data-sizex="1" data-sizey="1" class="gs-w">4</li>
+      <li data-row="2" data-col="2" data-sizex="1" data-sizey="1" class="gs-w">5</li>
+      <li data-row="3" data-col="2" data-sizex="1" data-sizey="1" class="gs-w">6</li>
+      <li data-row="4" data-col="2" data-sizex="1" data-sizey="1" class="gs-w">
+<img src="https://i1.sndcdn.com/avatars-000038731944-1lqeu7-t500x500.jpg" style="height: 95%; float: left;">
+
+        <div>
+<iframe id="sc-widget" src="https://w.soundcloud.com/player/?url=http://api.soundcloud.com/users/1539950/favorites" height="310" width: "50%" scrolling="no" frameborder="no"></iframe>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
+<script type="text/javascript">
+  (function(){
+    var widgetIframe = document.getElementById('sc-widget'),
+        widget       = SC.Widget(widgetIframe);
+
+    widget.bind(SC.Widget.Events.READY, function() {
+      widget.bind(SC.Widget.Events.PLAY, function() {
+        // get information about currently playing sound
+        widget.getCurrentSound(function(currentSound) {
+          console.log('sound ' + currentSound.get('') + 'began to play');
+        });
+      });
+      // get current level of volume
+      widget.getVolume(function(volume) {
+        console.log('current volume value is ' + volume);
+      });
+      // set new volume level
+      widget.setVolume(50);
+      // get the value of the current position
+    });
+
+  }());
+</script>
+
+
+    <script type="text/javascript" src="./gridster_files/jquery.js"></script>
+    <script src="./gridster_files/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <script type="text/javascript">
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+
+    <script type="text/javascript">
+      var gridster;
+
+      $(function(){
+
+        gridster = $(".gridster ul").gridster({
+          widget_base_dimensions: [400, 100],
+          widget_margins: [5, 5],
+          helper: 'clone'
+        }).data('gridster');
+
+
+        // resize widgets on hover
+        gridster.$el
+          .on('mouseenter', '> li', function() {
+              gridster.resize_widget($(this), 2, 3);
+              // debugger;
+              $(this).find('#sc-widget').fadeIn()          
+          })
+          .on('mouseleave', '> li', function() {
+              gridster.resize_widget($(this), 1, 1);
+              $(this).find('#sc-widget').hide()          
+
+          });
+
+      });
+    </script>
+
+
+
+</body></html>
