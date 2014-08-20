@@ -42,30 +42,56 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
  
         template: '#lineup-template',
  
-        events: {},
- 
-        initialize: function(){console.log('Lineup: initialize');},
+        events: {
+          'mouseenter ul': 'onGridEnter',
+          'mouseleave ul': 'onGridLeave'
+        },
+
+        initialize: function(){
+          var gridster;
+        },
+
+        onGridEnter: function(event) {
+          gridster.resize_widget($(event.target), 2, 2);
+          // debugger
+          console.log(event);
+        },
+
+        onGridLeave: function(event) {
+          gridster.resize_widget($(event.target), 1, 1);
+          console.log(event);
+        },
         
         onRender: function(){
-
-
           console.log('Lineup: onRender');
         },
         
         onShow: function(){
-          var gridster = $("#lineup ul").gridster({
-            widget_margins: [10, 10],
-            widget_base_dimensions: [200, 200]
+          gridster = $("#lineup ul").gridster({
+            widget_selector: 'li',
+            widget_margins: [100, 100],
+            widget_base_dimensions: [400, 200]
           }).data('gridster');
+
 
           _.each(artists.models, function(artist,index){
             var source    = $('#dj-template').html(),
                 template  = Handlebars.compile(source),
                 artist    = template(artist.toJSON());
 
-            gridster.add_widget(artist, 1,1,1,index+1);
-          });
+            // debugger
+            gridster.add_widget(artist,1,1,index+1*2,index+1*2);
+          }); 
 
+          // gridster.$el
+          //   .on('mouseenter', '> li', function() {
+          //       console.log('mouseenter');
+          //       gridster.resize_widget($(this), 2, 3);
+          //   })
+          //   .on('mouseleave', '> li', function() {
+          //       gridster.resize_widget($(this), 1, 1);
+
+          //   });
           console.log('Lineup: onShow');
         }
     });

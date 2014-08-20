@@ -42,7 +42,6 @@ body {
 }
 
 .dj-superstar {
-  width: 200px;
-  height: 100px;
-  background-color: red;
+  background-color: #333;
+  border: 2px solid red;
 }
