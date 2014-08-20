@@ -4,60 +4,69 @@
     <meta name="google-site-verification" content="_N8aqu2BildDJq_hhIdIICxT4JD6gVePNx9vKeHfYxM" />
     <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,800italic|Shadows+Into+Light|Alegreya+Sans:400,800italic|Audiowide|Special+Elite|Open+Sans:800italic,400|Merriweather+Sans:400,800italic|Exo+2:400,800italic|Sansita+One|Ceviche+One' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/studio1.css">
+    <link rel="stylesheet" href="styles/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/studio54.css">
 
     <title>Studio54 Underground in the hizzle!</title>
   </head>
-  
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
-        <ul class="nav navbar-nav">
-          <li id="nav-presales" class="active"><a href="#">PRESALES</a></li>
-          <li id="nav-lineup"><a>LINEUP</a></li>
-          <li><a href="#">DETAILS</a></li>
-        </ul>   
-      </div>
-    </nav>
-    
-    <div class="content">
+    <div id="studio54underground"></div>
 
-      <div class="presales">
-        <img id="logo" src="images/studio54_logo_underground.png">
-        <h1 class="party-date">October 4, 2014</h1>
-      </div>
+    <!-- TEMPLATES -->
+    <script type="text/template" id="layout-template">
 
-      <div id="lineup">
-        <ul></ul>
-      </div>  
+	      <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+	      	<div class="container">
+	        	<ul class="nav navbar-nav">
+	          	<li id="nav-presales" class="active"><a>PRESALES</a></li>
+	          	<li id="nav-lineup"><a>LINEUP</a></li>
+	          	<li id="nav-details"><a>DETAILS</a></li>
+	        	</ul>   
+	      	</div>
+	    	</nav>
+	    
+	    	<div id="content"></div>
 
-    </div>
+    </script>
+    <script type="text/template" id="presales-template">
 
-    <!-- VIEW TEMPLATES -->
-    <script id="presales-template" type="text/x-handlebars-template">
-        <div class="presales">
-          <img id="logo" src="images/studio54_logo_underground.png">
-          <h1 class="party-date">October 4, 2014</h1>
+	      <div class="presales">
+	        <img id="logo" src="images/studio54_logo_underground.png">
+	        <h1 class="party-date">October 4, 2014</h1>
+	      </div>
+
+    </script>
+    <script type="text/template" id="lineup-template">
+    	
+      	<div id="lineup">
+      		<ul></ul>
+      	</div>
+
+    </script>
+    <script type="text/template" id="details-template">
+
+        <div class="details">
+        	DETAILS
         </div>
+
     </script>
 
-    <script id="lineup-template" type="text/x-handlebars-template">
+     <script id="dj-template" type="text/x-handlebars-template">
         <div class="dj-superstar">
           <span class="name">{{name}}</span>
           <img class="photo" src="{{photo}}">
           <a class="mix" href="{{mix}}">Mix</a>
         </div>
     </script>
-    
+
     <!-- JS LIBRARIES -->
-    <script src="scripts/jquery.min.js"></script>
-    <script src="jquery.gridster.min.js"></script>
-    <script src="scripts/underscore.min.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
-    <script src="scripts/handlebars.js"></script>
-    <script src="scripts/backbone.min.js"></script>        
-    <script src="scripts/backbone.marionette.js"></script>
+    <script src="scripts/lib/jquery.min.js"></script>
+    <script src="scripts/lib/jquery.gridster.min.js"></script>
+    <script src="scripts/lib/underscore.min.js"></script>
+    <script src="scripts/lib/bootstrap.min.js"></script>
+    <script src="scripts/lib/handlebars.js"></script>
+    <script src="scripts/lib/backbone.min.js"></script>        
+    <script src="scripts/lib/backbone.marionette.js"></script>
       
     <!-- JS APP -->    
     <script src="scripts/studio54.js"></script>
