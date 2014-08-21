@@ -30,13 +30,15 @@
 
     </script><script type="text/template" id="presales-template">
 
-	      <div class="presales">
-	        <img id="logo" src="images/studio54_logo_underground.png">
-	        <h1 class="party-date">October 4, 2014</h1>
-	      </div>
+
 
     </script><script type="text/template" id="lineup-template">
-    	
+        
+        <div id="presales">
+          <img id="logo" src="images/studio54_logo_underground.png">
+          <h1 class="party-date">October 4, 2014</h1>
+        </div>
+
       	<div id="lineup"></div>
 
     </script><script type="text/template" id="details-template">
@@ -49,8 +51,8 @@
         <div class="dj-superstar">
           <img class="photo" src="{{photo}}">
           <h3 class="name">{{name}}</h3>
-          <i class="icon icon-play"></i>
-          <iframe id="soundcloud-widget" src="https://w.soundcloud.com/player/?url={{mix}}" scrolling="no" frameborder="no"></iframe>
+
+          <iframe class="soundcloud-widget" src="https://w.soundcloud.com/player/?url={{mix}}" scrolling="no" frameborder="no"></iframe>
         </div>
 
     </script>

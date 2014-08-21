@@ -84,8 +84,8 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         },
  
         events: {
-          'click #nav-presales': 'renderPresales',
-          'click #nav-lineup': 'renderLineup',
+          'click #nav-presales': 'showPresales',
+          'click #nav-lineup': 'showLineup',
           'click #nav-details': 'renderDetails'
         },
 
@@ -99,6 +99,20 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           $(event.currentTarget).addClass('active');
         },
 
+        showLineup: function(event) {
+          this.updateNav(event);
+          this.$('#presales').hide();
+          this.$('#lineup').fadeIn();
+          this.$('.soundcloud-widget').fadeIn();
+        },
+
+        showPresales: function(event) {
+          this.updateNav(event);
+          this.$('#lineup').hide();
+          this.$('#presales').fadeIn();
+          this.$('#soundcloud-widget').hide();
+        },
+
         renderPresales: function(event) {
           var presalesLayout = new module.PresalesLayoutView();
           this.Content.show(presalesLayout);
@@ -108,7 +122,6 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         renderLineup: function(event) {
           var lineupLayout = new module.LineupLayoutView();
           this.Content.show(lineupLayout);
-          this.updateNav(event);
         },
 
         renderDetails: function(event) {
@@ -118,11 +131,10 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         },
 
         onRender: function() {
-          this.renderPresales();
         },
  
         onShow: function() {
-            console.log('main layout: onShow');
+          this.renderLineup();
         }
     });
 
@@ -159,9 +171,9 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
             widget_margins: [20, 20],
             widget_base_dimensions: [400, 150],
             helper: 'clone',
-            // extra_cols: 2,
+            extra_cols: 2,
             extra_rows: 2,
-            max_size_x: 4,
+            // max_size_x: 4,
             avoid_overlapped_widgets: true,
             autogenerate_stylesheet: true
           }).data('gridster');
@@ -183,15 +195,24 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         eventsGridster: function() {
           gridster.$el
             .on('mouseenter', '> .dj-superstar', function() {
-                console.log( JSON.stringify(gridster.serialize($(this))) );
                 gridster.resize_widget($(this), 2, 2);
-                var $soundcloud = $(this).find('#soundcloud-widget');
-                // $soundcloud.slideUp();
-                $soundcloud.fadeIn(750);
+
+                var $soundcloud = $(this).find('.soundcloud-widget');
+                    $soundcloud.hide();
+                    $soundcloud.css('margin-top', '12px');
+                    $soundcloud.css('height', '303px');
+                    $soundcloud.css('width', '532px');
+                    $soundcloud.fadeIn(1000);
             })
             .on('mouseleave', '> .dj-superstar', function() {
                 gridster.resize_widget($(this), 1, 1);
-                $(this).find('#soundcloud-widget').hide();
+
+                var $soundcloud = $(this).find('.soundcloud-widget');
+                    // $soundcloud.hide();
+                    $soundcloud.css('margin-top', '5%');
+                    $soundcloud.css('height', '110px');
+                    $soundcloud.css('width', '250px');
+                    // $soundcloud.fadeIn();
             });
         },
         

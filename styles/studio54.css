@@ -1,8 +1,7 @@
 #logo {
-  height: 75%;
-  width: 75%;
-  margin-left: 10%;
-  margin-right: auto;
+  height: 65%;
+  width: 65%;
+  margin: 1%;
 }
 
 ul {
@@ -11,8 +10,6 @@ ul {
 
 body { 
   background-image: url('../images/studio54_bg_cropped.jpg');
-  /*background-size: 100% 100%;*/
-  /*background-repeat: no-repeat;*/
   padding-top: 70px; 
   color: black;
 }
@@ -51,7 +48,7 @@ body {
 .party-date {
 	font-size: 100px;
 	font-family: 'Ceviche One', cursive;
-  margin-left: 26%;
+  margin-left: 8%;
 	color: black;
 }
 
@@ -75,10 +72,8 @@ body {
   float: left;
   margin: 10px;
   margin-bottom: 20px;
-  /*margin-top: -10px; */
   margin-top: 5%;
   border-radius: 5px;
-  /*border: 2px dotted black;*/
 }
 
 .name {
@@ -95,24 +90,21 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     padding: 3px;
-    /*border: 5px solid black;*/
     z-index: 1000;
     margin-bottom: 5px;
     font-size: 30px; }
 
 #lineup {
-  /*margin: 0px auto; */
+  display: none;
 }
 
 .dj-superstar {
-  /*position: relative;*/
   position: absolute;
   z-index: 10;
   color: silver;
   background-color: #222;
   border: 5px solid black;
   display: inline-block;
-  /*margin: 10px;*/
 }
 
 .dj-superstar:hover {
@@ -120,10 +112,26 @@ body {
   -moz-transition: all 0.5s;
   transition: all 0.5s; 
 }
-
+/*
 #soundcloud-widget {
   display: none;
   margin-top: 12px;
   height: 303px;
-  width: 532px;
+  width: 532px; 
+}
+*/
+.soundcloud-widget {
+  display: none;
+  margin-top: 5%;
+  height: 110px;
+  width: 250px;
+}
+
+
+.soundcloud-logo {
+  max-height: 50%;
+  max-width: 50%;
+  margin-left: 50px;
+  margin-top: 10px;
+  opacity: 0.5;
 }
