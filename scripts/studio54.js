@@ -202,7 +202,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
                     $soundcloud.css('margin-top', '12px');
                     $soundcloud.css('height', '303px');
                     $soundcloud.css('width', '532px');
-                    $soundcloud.fadeIn(1000);
+                    $soundcloud.fadeIn(750);
             })
             .on('mouseleave', '> .dj-superstar', function() {
                 gridster.resize_widget($(this), 1, 1);
