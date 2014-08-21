@@ -42,9 +42,9 @@ var artists = new Artists([
     row: 1
   },
   {
-    name: 'Sean Murray',
-    mix: 'https://soundcloud.com/sean-murray',
-    photo: 'https://i1.sndcdn.com/avatars-000049400337-r3kbhh-t500x500.jpg',
+    name: 'Influence',
+    mix: 'https://soundcloud.com/influence-2',
+    photo: 'https://i1.sndcdn.com/avatars-000041124403-fxrbrz-t500x500.jpg?e76cf77',
     col: 2,
     row: 2
   },
