@@ -1,60 +1,65 @@
+// studio54underground.com
+// by Phillip
+
 var Artists = Backbone.Collection.extend();
  
 var artists = new Artists([
   {
-    name: 'Ethan Miller',
-    mix: 'https://soundcloud.com/djethan/live-at-fnf-campout-xviii',
+    name: 'DJ Ethan Miller',
+    // mix: 'https://soundcloud.com/djethan/live-at-fnf-campout-xviii',
+    mix: 'https://soundcloud.com/djethan',
+
     photo: 'https://i1.sndcdn.com/avatars-000038731944-1lqeu7-t500x500.jpg',
     col: 1,
     row: 1
   },
   {
     name: 'Chipper Guy',
-    mix: 'https://soundcloud.com/chipper-guy/deep-end-of-the-pool',
+    mix: 'https://soundcloud.com/chipper-guy',
     photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg',
-    col: 2,
+    col: 1,
     row: 2
-  },
-  {
-    name: 'Basehead',
-    mix: 'https://soundcloud.com/djethan/live-at-fnf-campout-xviii',
-    photo: 'https://i1.sndcdn.com/avatars-000038731944-1lqeu7-t500x500.jpg',
-    col: 3,
-    row: 3
   },
   {
     name: 'Noizeeboy',
-    mix: 'https://soundcloud.com/chipper-guy/deep-end-of-the-pool',
-    photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg',
-    col: 4,
+    mix: 'https://soundcloud.com/noizeeboy',
+    photo: 'https://i1.sndcdn.com/avatars-000030852263-tiqew9-t500x500.jpg',
+    col: 1,
+    row: 3
+  },
+  {
+    name: 'Tiesto',
+    mix: 'https://soundcloud.com/tiesto',
+    photo: 'https://i1.sndcdn.com/avatars-000080089386-wy50vf-t500x500.jpg',
+    col: 1,
     row: 4
   },
   {
-    name: 'Indy Nylez',
-    mix: 'https://soundcloud.com/djethan/live-at-fnf-campout-xviii',
-    photo: 'https://i1.sndcdn.com/avatars-000038731944-1lqeu7-t500x500.jpg',
-    col: 1,
+    name: 'Alixr',
+    mix: 'https://soundcloud.com/djalixr',
+    photo: 'https://i1.sndcdn.com/avatars-000086799753-oqfeor-t500x500.jpg',
+    col: 2,
     row: 1
   },
   {
-    name: 'LT DAAN',
-    mix: 'https://soundcloud.com/chipper-guy/deep-end-of-the-pool',
-    photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg',
+    name: 'Sean Murray',
+    mix: 'https://soundcloud.com/sean-murray',
+    photo: 'https://i1.sndcdn.com/avatars-000049400337-r3kbhh-t500x500.jpg',
     col: 2,
     row: 2
   },
   {
-    name: 'Galen',
-    mix: 'https://soundcloud.com/djethan/live-at-fnf-campout-xviii',
-    photo: 'https://i1.sndcdn.com/avatars-000038731944-1lqeu7-t500x500.jpg',
-    col: 3,
+    name: 'Kelee Silva',
+    mix: 'https://soundcloud.com/djkeleesilva',
+    photo: 'https://i1.sndcdn.com/avatars-000003531961-f3fid3-t500x500.jpg',
+    col: 2,
     row: 3
   },
   {
-    name: 'Alixr',
-    mix: 'https://soundcloud.com/chipper-guy/deep-end-of-the-pool',
-    photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg',
-    col: 4,
+    name: 'Paul Oakenfold',
+    mix: 'https://soundcloud.com/pauloakenfold',
+    photo: 'https://i1.sndcdn.com/avatars-000084720176-mq6noe-t500x500.jpg',
+    col: 2,
     row: 4
   },
 ]);
@@ -68,89 +73,10 @@ app.addRegions({
  
 app.module('App',function(module, App, Backbone, Marionette, $, _){
      
-    module.PresalesLayoutView = Marionette.LayoutView.extend({
-        tagName: 'div',
-        id: 'presalesLayoutView',
-        className: 'content',
-
-        template: '#presales-template',
- 
-        initialize: function(){console.log('Presales: initialize');},
-        onRender: function(){console.log('Presales: onRender');},
-        onShow: function(){console.log('Presales: onShow');}
-    });
- 
-    module.LineupLayoutView = Marionette.LayoutView.extend({
-        tagName: 'div',
-        id: 'LineupLayoutView',
-        className: 'content',
- 
-        template: '#lineup-template',
- 
-        events: {},
-
-        initialize: function(){
-          var gridster;
-        },
-
-        onRender: function(){
-          console.log('Lineup: onRender');
-        },
-        
-        onShow: function(){
-          gridster = $("#lineup").gridster({
-            widget_selector: '.dj-superstar',
-            widget_margins: [5, 5],
-            widget_base_dimensions: [200, 200],
-            extra_cols: 2,
-            max_size_x: 4,
-            avoid_overlapped_widgets: true,
-            autogenerate_stylesheet: true
-          }).data('gridster');
-
-          gridster.enable();
-
-          _.each(artists.models, function(artist,index){
-            var source    = $('#dj-template').html(),
-                template  = Handlebars.compile(source),
-                html      = template(artist.toJSON());
-
-            gridster.add_widget(html,1,1,artist.get('col'),artist.get('row'));
-
-          });
-
-          gridster.$el
-            .on('mouseenter', '> .dj-superstar', function() {
-                console.log( JSON.stringify(gridster.serialize($(this))) );
-                gridster.resize_widget($(this), 4, 2);
-            })
-            .on('mouseleave', '> .dj-superstar', function() {
-                gridster.resize_widget($(this), 1, 1);
-
-            });
-
-          gridster.init();
-        }
-    });
- 
-     module.DetailsLayoutView = Marionette.LayoutView.extend({
-        tagName: 'div',
-        id: 'DetailsLayoutView',
-        className: 'content',
- 
-        template: '#details-template',
- 
-        events: {},
- 
-        initialize: function(){console.log('Details: initialize');},
-        onRender: function(){console.log('Details: onRender');},
-        onShow: function(){console.log('Details: onShow');}
-    });
- 
-    /* define a view; in this case a 'Layout' */
+    // MAIN VIEW
     module.AppLayoutView = Marionette.LayoutView.extend({
         tagName: 'div',
-        id: 'AppContainer',
+        id: 'studio54underground',
         template: '#layout-template',
  
         regions: {
@@ -163,8 +89,6 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           'click #nav-details': 'renderDetails'
         },
 
-
-        /* called when the view initializes, before it displays */
         initialize: function() {
             console.log('main layout: initialize');
         },
@@ -201,18 +125,111 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
             console.log('main layout: onShow');
         }
     });
+
+    // PRESALES VIEW
+    module.PresalesLayoutView = Marionette.LayoutView.extend({
+        tagName: 'div',
+        id: 'presalesLayoutView',
+        className: 'content',
+
+        template: '#presales-template',
  
-    /* Tell the module what to do when it is done loading */
+        initialize: function(){console.log('Presales: initialize');},
+        onRender: function(){console.log('Presales: onRender');},
+        onShow: function(){console.log('Presales: onShow');}
+    });
+ 
+    // LINEUP VIEW
+    module.LineupLayoutView = Marionette.LayoutView.extend({
+        tagName: 'div',
+        id: 'LineupLayoutView',
+        className: 'content',
+ 
+        template: '#lineup-template',
+ 
+        events: {},
+
+        initialize: function(){
+          var gridster;
+        },
+
+        initGridster: function() {
+          gridster = $("#lineup").gridster({
+            widget_selector: '.dj-superstar',
+            widget_margins: [20, 20],
+            widget_base_dimensions: [400, 150],
+            helper: 'clone',
+            // extra_cols: 2,
+            extra_rows: 2,
+            max_size_x: 4,
+            avoid_overlapped_widgets: true,
+            autogenerate_stylesheet: true
+          }).data('gridster');
+
+          gridster.disable(); // disables sorting
+          // gridster.init();
+        },
+
+        renderGridster: function() {
+          _.each(artists.models, function(artist,index){
+            var source    = $('#dj-template').html(),
+                template  = Handlebars.compile(source),
+                html      = template(artist.toJSON());
+
+            gridster.add_widget(html,1,1,artist.get('col'),artist.get('row'));
+          });
+        },
+
+        eventsGridster: function() {
+          gridster.$el
+            .on('mouseenter', '> .dj-superstar', function() {
+                console.log( JSON.stringify(gridster.serialize($(this))) );
+                gridster.resize_widget($(this), 2, 2);
+                var $soundcloud = $(this).find('#soundcloud-widget');
+                // $soundcloud.slideUp();
+                $soundcloud.fadeIn(750);
+            })
+            .on('mouseleave', '> .dj-superstar', function() {
+                gridster.resize_widget($(this), 1, 1);
+                $(this).find('#soundcloud-widget').hide();
+            });
+        },
+        
+        onRender: function(){
+          console.log('Lineup: onRender');
+        },
+        
+        onShow: function(){
+          this.initGridster();
+          this.renderGridster();
+          this.eventsGridster();
+        }
+    });
+ 
+     module.DetailsLayoutView = Marionette.LayoutView.extend({
+        tagName: 'div',
+        id: 'DetailsLayoutView',
+        className: 'content',
+ 
+        template: '#details-template',
+ 
+        events: {},
+ 
+        initialize: function(){console.log('Details: initialize');},
+        onRender: function(){console.log('Details: onRender');},
+        onShow: function(){console.log('Details: onShow');}
+    });
+ 
+
+
+    // load application 
     module.addInitializer(function(){
-        /* create a new instance of the layout from the module */
         var layout = new module.AppLayoutView();
- 
-        /* display the layout in the region defined at the top of this file */
         app.appRegion.show(layout);
     });
 });
- 
-/* once the DOM initializes, start the app */
+
+// start app when DOM ready 
 $(document).ready(function() {
   app.start();
 });

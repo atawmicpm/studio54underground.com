@@ -5,18 +5,16 @@
   margin-right: auto;
 }
 
-#lineup {
-  /*margin-left: 20%;*/
-}
-
 ul {
   list-style-type: none;
 }
 
 body { 
-	color: black;
-  padding-top: 70px; 
   background-image: url('../images/studio54_bg_cropped.jpg');
+  /*background-size: 100% 100%;*/
+  /*background-repeat: no-repeat;*/
+  padding-top: 70px; 
+  color: black;
 }
 
 /*@media only screen and (max-width: 320px) {
@@ -24,11 +22,37 @@ body {
 
 }*/
 
+#box {
+    background: #f4f4f4;
+    border: 1px solid #bbbbbb;
+    width: 200px;
+    height: 200px;
+    margin: 60px auto;
+    position: relative;
+}
+ 
+#box:before {
+    border: 1px solid white;
+    content: '';
+    width: 198px;
+    height: 198px;
+    position: absolute;
+}
+ 
+#box:after {
+    content: '';
+    position: absolute;
+    width: 196px;
+    height: 196px;
+    border: 1px solid #bbbbbb;
+    left: 1px; top: 1px;
+}
+
 .party-date {
 	font-size: 100px;
 	font-family: 'Ceviche One', cursive;
+  margin-left: 26%;
 	color: black;
-	margin-left: 26%;
 }
 
 .navbar-nav > li:hover {
@@ -46,12 +70,60 @@ body {
 }
 
 .photo {
-  height: 90%;
+  max-height: 83%;
+  max-width: 90%;
+  float: left;
+  margin: 10px;
+  margin-bottom: 20px;
+  /*margin-top: -10px; */
+  margin-top: 5%;
+  border-radius: 5px;
+  /*border: 2px dotted black;*/
+}
+
+.name {
+    position: absolute;
+    border-left: 5px solid black;
+    border-top: 5px solid black;
+    border: 5px solid black;
+    top:-5px;
+    left:-5px;
+    display: inline-block;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #222;
+    margin-top: -30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 3px;
+    /*border: 5px solid black;*/
+    z-index: 1000;
+    margin-bottom: 5px;
+    font-size: 30px; }
+
+#lineup {
+  /*margin: 0px auto; */
 }
 
 .dj-superstar {
-  background-color: #C0C0C0;
-  opacity: 0.5;
+  /*position: relative;*/
+  position: absolute;
+  z-index: 10;
+  color: silver;
+  background-color: #222;
+  border: 5px solid black;
   display: inline-block;
-  /*border: 2px solid #333;*/
+  /*margin: 10px;*/
+}
+
+.dj-superstar:hover {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s; 
+}
+
+#soundcloud-widget {
+  display: none;
+  margin-top: 12px;
+  height: 303px;
+  width: 532px;
 }
