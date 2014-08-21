@@ -5,6 +5,14 @@
   margin-right: auto;
 }
 
+#lineup {
+  /*margin-left: 20%;*/
+}
+
+ul {
+  list-style-type: none;
+}
+
 body { 
 	color: black;
   padding-top: 70px; 
@@ -32,7 +40,7 @@ body {
 }
 
 .navbar-nav > li > a:hover {
-   -webkit-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s; 
 }
@@ -42,6 +50,8 @@ body {
 }
 
 .dj-superstar {
-  background-color: #333;
-  border: 2px solid red;
+  background-color: #C0C0C0;
+  opacity: 0.5;
+  display: inline-block;
+  /*border: 2px solid #333;*/
 }

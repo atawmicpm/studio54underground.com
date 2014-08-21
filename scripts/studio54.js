@@ -1,18 +1,63 @@
-var Artists = Backbone.Collection.extend();  
+var Artists = Backbone.Collection.extend();
  
 var artists = new Artists([
-  { id: 1, 
-    name: 'Ethan Miller', 
-    mix: 'https://soundcloud.com/djethan/live-at-fnf-campout-xviii', 
-    photo: 'https://i1.sndcdn.com/avatars-000038731944-1lqeu7-t500x500.jpg'
+  {
+    name: 'Ethan Miller',
+    mix: 'https://soundcloud.com/djethan/live-at-fnf-campout-xviii',
+    photo: 'https://i1.sndcdn.com/avatars-000038731944-1lqeu7-t500x500.jpg',
+    col: 1,
+    row: 1
   },
   {
-    id: 2, 
-    name: 'Chipper Guy', 
-    mix: 'https://soundcloud.com/chipper-guy/deep-end-of-the-pool', 
-    photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg'
-  }
-]);  
+    name: 'Chipper Guy',
+    mix: 'https://soundcloud.com/chipper-guy/deep-end-of-the-pool',
+    photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg',
+    col: 2,
+    row: 2
+  },
+  {
+    name: 'Basehead',
+    mix: 'https://soundcloud.com/djethan/live-at-fnf-campout-xviii',
+    photo: 'https://i1.sndcdn.com/avatars-000038731944-1lqeu7-t500x500.jpg',
+    col: 3,
+    row: 3
+  },
+  {
+    name: 'Noizeeboy',
+    mix: 'https://soundcloud.com/chipper-guy/deep-end-of-the-pool',
+    photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg',
+    col: 4,
+    row: 4
+  },
+  {
+    name: 'Indy Nylez',
+    mix: 'https://soundcloud.com/djethan/live-at-fnf-campout-xviii',
+    photo: 'https://i1.sndcdn.com/avatars-000038731944-1lqeu7-t500x500.jpg',
+    col: 1,
+    row: 1
+  },
+  {
+    name: 'LT DAAN',
+    mix: 'https://soundcloud.com/chipper-guy/deep-end-of-the-pool',
+    photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg',
+    col: 2,
+    row: 2
+  },
+  {
+    name: 'Galen',
+    mix: 'https://soundcloud.com/djethan/live-at-fnf-campout-xviii',
+    photo: 'https://i1.sndcdn.com/avatars-000038731944-1lqeu7-t500x500.jpg',
+    col: 3,
+    row: 3
+  },
+  {
+    name: 'Alixr',
+    mix: 'https://soundcloud.com/chipper-guy/deep-end-of-the-pool',
+    photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg',
+    col: 4,
+    row: 4
+  },
+]);
 
 
 var app = new Backbone.Marionette.Application();
@@ -42,57 +87,49 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
  
         template: '#lineup-template',
  
-        events: {
-          'mouseenter ul': 'onGridEnter',
-          'mouseleave ul': 'onGridLeave'
-        },
+        events: {},
 
         initialize: function(){
           var gridster;
         },
 
-        onGridEnter: function(event) {
-          gridster.resize_widget($(event.target), 2, 2);
-          // debugger
-          console.log(event);
-        },
-
-        onGridLeave: function(event) {
-          gridster.resize_widget($(event.target), 1, 1);
-          console.log(event);
-        },
-        
         onRender: function(){
           console.log('Lineup: onRender');
         },
         
         onShow: function(){
-          gridster = $("#lineup ul").gridster({
-            widget_selector: 'li',
-            widget_margins: [100, 100],
-            widget_base_dimensions: [400, 200]
+          gridster = $("#lineup").gridster({
+            widget_selector: '.dj-superstar',
+            widget_margins: [5, 5],
+            widget_base_dimensions: [200, 200],
+            extra_cols: 2,
+            max_size_x: 4,
+            avoid_overlapped_widgets: true,
+            autogenerate_stylesheet: true
           }).data('gridster');
 
+          gridster.enable();
 
           _.each(artists.models, function(artist,index){
             var source    = $('#dj-template').html(),
                 template  = Handlebars.compile(source),
-                artist    = template(artist.toJSON());
+                html      = template(artist.toJSON());
 
-            // debugger
-            gridster.add_widget(artist,1,1,index+1*2,index+1*2);
-          }); 
+            gridster.add_widget(html,1,1,artist.get('col'),artist.get('row'));
 
-          // gridster.$el
-          //   .on('mouseenter', '> li', function() {
-          //       console.log('mouseenter');
-          //       gridster.resize_widget($(this), 2, 3);
-          //   })
-          //   .on('mouseleave', '> li', function() {
-          //       gridster.resize_widget($(this), 1, 1);
+          });
 
-          //   });
-          console.log('Lineup: onShow');
+          gridster.$el
+            .on('mouseenter', '> .dj-superstar', function() {
+                console.log( JSON.stringify(gridster.serialize($(this))) );
+                gridster.resize_widget($(this), 4, 2);
+            })
+            .on('mouseleave', '> .dj-superstar', function() {
+                gridster.resize_widget($(this), 1, 1);
+
+            });
+
+          gridster.init();
         }
     });
  

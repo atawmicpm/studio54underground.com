@@ -4,6 +4,8 @@
     <meta name="google-site-verification" content="_N8aqu2BildDJq_hhIdIICxT4JD6gVePNx9vKeHfYxM" />
     <link href='http://fonts.googleapis.com/css?family=Ceviche+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/lib/jquery.gridster.min.css">
+
     <link rel="stylesheet" href="styles/studio54.css">
     <title>Studio54 Underground in the hizzle!</title>
   </head>
@@ -35,9 +37,7 @@
 
     </script><script type="text/template" id="lineup-template">
     	
-      	<div id="lineup">
-      		<ul></ul>
-      	</div>
+      	<div id="lineup"></div>
 
     </script><script type="text/template" id="details-template">
 
@@ -47,16 +47,16 @@
 
     </script><script id="dj-template" type="text/x-handlebars-template">
 
-        <li class="dj-superstar">
+        <div class="dj-superstar">
           <span class="name">{{name}}</span>
           <img class="photo" src="{{photo}}">
           <a class="mix" href="{{mix}}">Mix</a>
-        </li>
+        </div>
 
     </script>
 
     <!-- JS LIBRARIES -->
-    <script src="scripts/lib/jquery.min.js"></script>
+    <script src="scripts/lib/jquery-1.11.1.min.js"></script>
     <script src="scripts/lib/jquery.gridster.min.js"></script>
     <script src="scripts/lib/underscore.min.js"></script>
     <script src="scripts/lib/bootstrap.min.js"></script>
