@@ -96,7 +96,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
               $error  = this.$('#error-message');
               width   = $window.width();
           debugger
-          if(width < 1380) $error.html('<p>Site looks best at <span class="silver">1380px</span>, you\'re at <span class="silver">' + width + '</span>.</p>');
+          if(width < 1380) $error.html('<p>Site looks best at <span class="silver">1380px</span> wide, you\'re at <span class="silver">' + width + '</span>.</p>');
           else $error.html('');
         },
 
@@ -218,10 +218,14 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
 
                 var $soundcloud = $(this).find('.soundcloud-widget');
 
+                    $soundcloud.hide();
                     // renders better than sending classes
                     $soundcloud.css('margin-top', '5%');
                     $soundcloud.css('height', '110px');
                     $soundcloud.css('width', '250px');
+
+                    $soundcloud.fadeIn(100);
+
             });
         },
         
