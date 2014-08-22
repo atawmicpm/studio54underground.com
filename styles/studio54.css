@@ -72,6 +72,15 @@ body {
     margin-bottom: 5px;
     font-size: 30px; }
 
+#error-message {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
+  /*padding-top: 10px;*/
+  float: right;
+  margin-left: 50px;
+  margin-top: 12px;
+  color: #777;
+}
 #lineup {
   display: none;
   margin-left: 5%;
@@ -121,14 +130,14 @@ body {
   -moz-transition: all 0.5s;
   transition: all 0.5s; 
 }
-/*
-#soundcloud-widget {
+
+.soundcloud-large {
   display: none;
   margin-top: 12px;
   height: 303px;
   width: 532px; 
 }
-*/
+
 .soundcloud-widget {
   display: none;
   margin-top: 5%;

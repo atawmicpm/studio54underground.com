@@ -91,6 +91,15 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
             console.log('main layout: initialize');
         },
  
+        checkBrowserWidth: function(event) {
+          var $window = $(window),
+              $error  = this.$('#error-message');
+              width   = $window.width();
+          debugger
+          if(width < 1380) $error.html('<p>Site looks best at 1380px, you\'re at ' + width + '.</p>');
+          else $error.html('');
+        },
+
         updateNav: function(event) {
           if (!event) return;
           this.$('.navbar-nav > li').removeClass('active');
@@ -133,6 +142,8 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
  
         onShow: function() {
           this.renderLineup();
+          this.checkBrowserWidth();
+          $(window).on('resize', this.checkBrowserWidth);
         }
     });
 
@@ -175,9 +186,6 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
             avoid_overlapped_widgets: true,
             autogenerate_stylesheet: true
           }).data('gridster');
-
-          // gridster.disable(); // disables sorting
-          // gridster.init();
         },
 
         renderGridster: function() {
@@ -197,20 +205,23 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
 
                 var $soundcloud = $(this).find('.soundcloud-widget');
                     $soundcloud.hide();
+
+                    // renders better than setting classes
                     $soundcloud.css('margin-top', '12px');
                     $soundcloud.css('height', '303px');
                     $soundcloud.css('width', '532px');
+
                     $soundcloud.fadeIn(1200);
             })
             .on('mouseleave', '> .dj-superstar', function() {
                 gridster.resize_widget($(this), 1, 1);
 
                 var $soundcloud = $(this).find('.soundcloud-widget');
-                    // $soundcloud.hide();
+
+                    // renders better than sending classes
                     $soundcloud.css('margin-top', '5%');
                     $soundcloud.css('height', '110px');
                     $soundcloud.css('width', '250px');
-                    // $soundcloud.fadeIn();
             });
         },
         
