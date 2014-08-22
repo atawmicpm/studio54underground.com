@@ -5,10 +5,8 @@ var Artists = Backbone.Collection.extend();
  
 var artists = new Artists([
   {
-    name: 'DJ Ethan Miller',
-    // mix: 'https://soundcloud.com/djethan/live-at-fnf-campout-xviii',
+    name: 'Ethan Miller',
     mix: 'https://soundcloud.com/djethan',
-
     photo: 'https://i1.sndcdn.com/avatars-000038731944-1lqeu7-t500x500.jpg',
     col: 1,
     row: 1
@@ -17,7 +15,7 @@ var artists = new Artists([
     name: 'Chipper Guy',
     mix: 'https://soundcloud.com/chipper-guy',
     photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg',
-    col: 1,
+    col: 2,
     row: 2
   },
   {
@@ -38,15 +36,15 @@ var artists = new Artists([
     name: 'Alixr',
     mix: 'https://soundcloud.com/djalixr',
     photo: 'https://i1.sndcdn.com/avatars-000086799753-oqfeor-t500x500.jpg',
-    col: 2,
-    row: 1
+    col: 1,
+    row: 2
   },
   {
     name: 'Influence',
     mix: 'https://soundcloud.com/influence-2',
     photo: 'https://i1.sndcdn.com/avatars-000041124403-fxrbrz-t500x500.jpg?e76cf77',
     col: 2,
-    row: 2
+    row: 1
   },
   {
     name: 'Kelee Silva',
@@ -102,7 +100,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         showLineup: function(event) {
           this.updateNav(event);
           this.$('#presales').hide();
-          this.$('#lineup').fadeIn();
+          this.$('#lineup').fadeIn(1000);
           this.$('.soundcloud-widget').fadeIn();
         },
 
@@ -170,15 +168,15 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
             widget_selector: '.dj-superstar',
             widget_margins: [20, 20],
             widget_base_dimensions: [400, 150],
-            helper: 'clone',
-            extra_cols: 2,
+            // helper: 'clone',
+            // extra_cols: 2,
             extra_rows: 2,
             // max_size_x: 4,
             avoid_overlapped_widgets: true,
             autogenerate_stylesheet: true
           }).data('gridster');
 
-          gridster.disable(); // disables sorting
+          // gridster.disable(); // disables sorting
           // gridster.init();
         },
 
@@ -202,7 +200,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
                     $soundcloud.css('margin-top', '12px');
                     $soundcloud.css('height', '303px');
                     $soundcloud.css('width', '532px');
-                    $soundcloud.fadeIn(750);
+                    $soundcloud.fadeIn(1200);
             })
             .on('mouseleave', '> .dj-superstar', function() {
                 gridster.resize_widget($(this), 1, 1);

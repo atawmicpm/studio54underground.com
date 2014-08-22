@@ -84,8 +84,9 @@ body {
     top:-5px;
     left:-5px;
     display: inline-block;
-    font-family: 'Roboto Condensed', sans-serif;
-    background-color: #222;
+/*    font-family: 'Roboto Condensed', sans-serif;
+*/    background-color: #222;
+    font-family: 'Shadows Into Light', cursive;
     margin-top: -30px;
     padding-left: 10px;
     padding-right: 10px;
@@ -96,6 +97,7 @@ body {
 
 #lineup {
   display: none;
+  margin-left: 5%;
 }
 
 .dj-superstar {
