@@ -96,7 +96,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
               $error  = this.$('#error-message');
               width   = $window.width();
           debugger
-          if(width < 1380) $error.html('<p>Site looks best at 1380px, you\'re at ' + width + '.</p>');
+          if(width < 1380) $error.html('<p>Site looks best at <span class="silver">1380px</span>, you\'re at <span class="silver">' + width + '</span>.</p>');
           else $error.html('');
         },
 

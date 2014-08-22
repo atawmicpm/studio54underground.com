@@ -131,6 +131,10 @@ body {
   transition: all 0.5s; 
 }
 
+.silver {
+  color: silver;
+}
+
 .soundcloud-large {
   display: none;
   margin-top: 12px;
