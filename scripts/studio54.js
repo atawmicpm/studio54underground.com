@@ -15,15 +15,15 @@ var artists = new Artists([
     name: 'Chipper Guy',
     mix: 'https://soundcloud.com/chipper-guy',
     photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg',
-    col: 2,
-    row: 2
-  },
-  {
-    name: 'Noizeeboy',
-    mix: 'https://soundcloud.com/noizeeboy',
-    photo: 'https://i1.sndcdn.com/avatars-000030852263-tiqew9-t500x500.jpg',
     col: 1,
     row: 3
+  },
+  {
+    name: 'Joshuah Vincent',
+    mix: 'https://soundcloud.com/joshuahv',
+    photo: 'https://i1.sndcdn.com/avatars-000070791708-kp5nsn-t500x500.jpg',
+    col: 2,
+    row: 2
   },
   {
     name: 'Tiesto',
