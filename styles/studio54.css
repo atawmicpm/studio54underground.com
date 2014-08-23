@@ -50,41 +50,10 @@ body {
   transition: all 0.7s; 
   border-bottom: 5px solid #efb91f;
 }
-/*.shine {
-  background: url(../images/gradient-shine.png) repeat-x;
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 31px;
-}*/
 
-.photo {
-  max-height: 83%;
-  max-width: 90%;
-  float: left;
-  margin: 10px;
-  margin-bottom: 20px;
-  margin-top: 5%;
-  border-radius: 5px;
+.active {
+  border-bottom: 5px solid #efb91f;
 }
-
-.name {
-    position: absolute;
-    border-left: 5px solid black;
-    border-top: 5px solid black;
-    border: 5px solid black;
-    top:-5px;
-    left:-5px;
-    display: inline-block;
-    background-color: #222;
-    font-family: 'Shadows Into Light', cursive;
-    margin-top: -30px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding: 3px;
-    z-index: 1000;
-    margin-bottom: 5px;
-    font-size: 30px; }
 
 #error-message {
   font-family: 'Shadows Into Light', cursive;
@@ -96,28 +65,19 @@ body {
 }
 #lineup {
   display: none;
-  margin-left: 3%;
-  margin-top: 50px;
+  margin-left: 1%;
+  margin-top: 90px;
 }
-
-
 
 .dj-superstar {
   display: none;
   position: absolute;
   z-index: 10;
   color: silver;
-  /*background-color: #222;*/
-  border: 5px solid black;
+  background-color: #efb91f;
+  background-image: url('../images/dj-superstar-gold.png');
+  border: 2px solid #efb91f;
   display: inline-block;
-  background: #222222; /* Old browsers */
-  background: -moz-linear-gradient(top,  #222222 0%, #494949 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222222), color-stop(100%,#494949)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #222222 0%,#494949 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #222222 0%,#494949 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #222222 0%,#494949 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #222222 0%,#494949 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#494949',GradientType=0 ); /* IE6-9 */
 }
 
 .dj-superstar:hover {
@@ -126,29 +86,39 @@ body {
   transition: all 0.5s; 
 }
 
-.silver {
-  color: silver;
-}
+.name {
+    position: absolute;
+    top:-5px;
+    left:-5px;
+    border: 1px solid #efb91f;
+    color: #efb91f;
+    display: inline-block;
+    background-color: black;
+    font-family: 'Dosis', sans-serif;
+    /*background-image: url('../images/dj-name-gold.png');*/
+    margin-top: -30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 3px;
+    z-index: 1000;
+    margin-bottom: 5px;
+    font-size: 30px; }
 
-.soundcloud-large {
-  display: none;
-  margin-top: 12px;
-  height: 303px;
-  width: 532px; 
+.photo {
+  max-height: 99%;
+  /*max-width: %;*/
+  float: left;
+  margin: 2px;
+  padding: 5px;
+  /*margin-top: 10px;*/
+  border-radius: 5px;
 }
 
 .soundcloud-widget {
   display: none;
-  margin-top: 5%;
-  height: 110px;
-  width: 250px;
-}
-
-
-.soundcloud-logo {
-  max-height: 50%;
-  max-width: 50%;
-  margin-left: 50px;
-  margin-top: 10px;
-  opacity: 0.5;
+  float: left;
+  margin-top: 2px;
+  padding: 5px;
+  height: 125px;
+  width: 365px;
 }

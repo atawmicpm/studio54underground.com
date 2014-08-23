@@ -159,9 +159,9 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         initGridster: function() {
           gridster = $("#lineup").gridster({
             widget_selector: '.dj-superstar',
-            widget_margins: [20, 20],
-            widget_base_dimensions: [400, 150],
-            extra_rows: 2,
+            widget_margins: [20, 24],
+            widget_base_dimensions: [500, 130],
+            extra_rows: 4,
             max_size_x: 2,
             avoid_overlapped_widgets: true,
             autogenerate_stylesheet: true
@@ -214,18 +214,17 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         smallSoundcloud: function($soundcloud) {
           $soundcloud.hide();
           // renders better than sending classes
-          $soundcloud.css('margin-top', '5%');
-          $soundcloud.css('height', '110px');
-          $soundcloud.css('width', '250px');
+          // $soundcloud.css('margin-top', '5px');
+          $soundcloud.css('height', '122px');
+          $soundcloud.css('width', '365px');
           $soundcloud.fadeIn(100);
         },
 
         bigSoundCloud: function($soundcloud) {
           $soundcloud.hide();
           // renders better than setting classes
-          $soundcloud.css('margin-top', '12px');
-          $soundcloud.css('height', '303px');
-          $soundcloud.css('width', '532px');
+          $soundcloud.css('height', '300px');
+          $soundcloud.css('width', '724px');
           $soundcloud.fadeIn(1200);
         },
 
