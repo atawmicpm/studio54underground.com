@@ -4,79 +4,76 @@
     <meta name="google-site-verification" content="_N8aqu2BildDJq_hhIdIICxT4JD6gVePNx9vKeHfYxM" />
     <link href='http://fonts.googleapis.com/css?family=Ceviche+One|Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="styles/lib/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="styles/lib/jquery-ui.min.css"> -->
-    <link rel="stylesheet" href="styles/lib/jquery.gridster.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400' rel='stylesheet' type='text/css'>
+    
+    <!-- STYLES -->
+    <link async rel="stylesheet" href="styles/lib/bootstrap.min.css">
+    <link async rel="stylesheet" href="styles/lib/jquery.gridster.min.css">
+    <link async rel="stylesheet" href="styles/studio54.css">
 
-    <link rel="stylesheet" href="styles/studio54.css">
-    <title>Studio54 Underground in the hizzle!</title>
-  </head>
-  
-  <body>
-    <div id="studio54underground"></div>
+    <!-- JS LIBS -->
+    <script src="scripts/lib/jquery-2.min.js"></script>
+    <script async src="scripts/lib/jquery.gridster.min.js"></script>
+    <script async src="scripts/lib/underscore.min.js"></script>
+    <script async src="scripts/lib/bootstrap.min.js"></script>
+    <script async src="scripts/lib/handlebars.js"></script>
+    <script async src="scripts/lib/backbone.min.js"></script>        
+    <script async src="scripts/lib/backbone.marionette.js"></script>
+    <script async src="scripts/lib/paper.js"></script>
+    <script async src="https://w.soundcloud.com/player/api.js"></script>
+
+    <!-- JS APP -->    
+    <script async src="scripts/studio54.js"></script>
+
+    <script type="text/paperscript" canvas="myCanvas">
+      // Create a Paper.js Path to draw a line into it:
+      var path = new Path();
+      // Give the stroke a color
+      path.strokeColor = 'black';
+      var start = new Point(100, 100);
+      // Move to start and draw a line from there
+      path.moveTo(start);
+      // Note the plus operator on Point objects.
+      // PaperScript does that for us, and much more!
+      path.lineTo(start + [ 100, -50 ]);
+    </script>
 
     <!-- TEMPLATES -->
     <script type="text/template" id="layout-template">
-
-	      <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-	      	<div class="container">
-	        	<ul class="nav navbar-nav">
-	          	<li id="nav-presales" class="active"><a>Presales</a></li>
-	          	<li id="nav-lineup"><a>Lineup</a></li>
-	          	<li id="nav-details"><a>Details</a></li>
-	        	</ul>   
+          <div class="container">
+            <ul class="nav navbar-nav">
+              <li id="nav-presales" class="active"><span class="shine"></span>PRESALES</li>
+              <li id="nav-lineup" class=""><span class="shine"></span>LINEUP</li>
+              <li id="nav-details" class=""><span class="shine"></span>DETAILS</li>
+            </ul>   
             <div id="error-message"></div>
-	      	</div>
-	    	</nav>
-	    
-	    	<div id="content"></div>
+          </div>
+      
+        <div id="content"></div>
+    </script>
 
-    </script><script type="text/template" id="presales-template">
+    <script type="text/template" id="lineup-template">
+        <div id="presales"><div id="logo"></div></div>
+        <div id="lineup"></div>
+        <div id="details"></div>
+    </script>
 
-
-
-    </script><script type="text/template" id="lineup-template">
-        
-        <div id="presales">
-          <img id="logo" src="images/studio54_logo_underground.png">
-          <h1 class="party-date">Saturday, OCTOBER 4, 2014</h1>
-        </div>
-
-      	<div id="lineup"></div>
-
-    </script><script type="text/template" id="details-template">
-
-        <div class="details">
-        	DETAILS
-        </div>
-    </script><script id="dj-template" type="text/x-handlebars-template">
-
+    <script id="dj-template" type="text/x-handlebars-template">
         <div class="dj-superstar">
           <img class="photo" src="{{photo}}">
           <h3 class="name">{{name}}</h3>
 
           <iframe class="soundcloud-widget" src="https://w.soundcloud.com/player/?url={{mix}}" scrolling="no" frameborder="no"></iframe>
         </div>
-
     </script>
 
-    <!-- JS LIBRARIES -->
-    <script src="scripts/lib/jquery-2.min.js"></script>
-    <!-- <script src="scripts/lib/jquery-ui.min.js"></script> -->
-    <script src="scripts/lib/jquery.gridster.min.js"></script>
-    <script src="scripts/lib/underscore.min.js"></script>
-    <script src="scripts/lib/bootstrap.min.js"></script>
-    <script src="scripts/lib/handlebars.js"></script>
-    <script src="scripts/lib/backbone.min.js"></script>        
-    <script src="scripts/lib/backbone.marionette.js"></script>
-    <script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
-
-    <!-- JS APP -->    
-    <script src="scripts/studio54.js"></script>
-
-
-
-
+    <!-- TITLE -->
+    <title>Studio54 Underground in the hizzle!</title>
+  </head>
+  
+  <body>
+    <div id="studio54underground"></div>
   </body>
 
 </html>

@@ -71,7 +71,7 @@ app.addRegions({
  
 app.module('App',function(module, App, Backbone, Marionette, $, _){
      
-    // MAIN VIEW
+    // LAYOUT VIEW
     module.AppLayoutView = Marionette.LayoutView.extend({
         tagName: 'div',
         id: 'studio54underground',
@@ -87,9 +87,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           'click #nav-details': 'renderDetails'
         },
 
-        initialize: function() {
-            console.log('main layout: initialize');
-        },
+        initialize: function() {},
  
         checkBrowserWidth: function(event) {
           var $window = $(window),
@@ -108,7 +106,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         showLineup: function(event) {
           this.updateNav(event);
           this.$('#presales').hide();
-          this.$('#lineup').fadeIn(1000);
+          this.$('#lineup').fadeIn(2000);
           this.$('.soundcloud-widget').fadeIn();
         },
 
@@ -116,7 +114,6 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           this.updateNav(event);
           this.$('#lineup').hide();
           this.$('#presales').fadeIn();
-          this.$('#soundcloud-widget').hide();
         },
 
         renderPresales: function(event) {
@@ -141,25 +138,12 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
  
         onShow: function() {
           this.renderLineup();
-          this.checkBrowserWidth();
-          $(window).on('resize', this.checkBrowserWidth);
+          // this.checkBrowserWidth();
+          // $(window).on('resize', this.checkBrowserWidth);
         }
     });
-
-    // PRESALES VIEW
-    module.PresalesLayoutView = Marionette.LayoutView.extend({
-        tagName: 'div',
-        id: 'presalesLayoutView',
-        className: 'content',
-
-        template: '#presales-template',
  
-        initialize: function(){console.log('Presales: initialize');},
-        onRender: function(){console.log('Presales: onRender');},
-        onShow: function(){console.log('Presales: onShow');}
-    });
- 
-    // LINEUP VIEW
+    // PAGE VIEW
     module.LineupLayoutView = Marionette.LayoutView.extend({
         tagName: 'div',
         id: 'LineupLayoutView',
@@ -170,7 +154,6 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         events: {},
 
         initialize: function(){
-          var gridster;
         },
 
         initGridster: function() {
@@ -178,8 +161,6 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
             widget_selector: '.dj-superstar',
             widget_margins: [20, 20],
             widget_base_dimensions: [400, 150],
-            // helper: 'clone',
-            // extra_cols: 2,
             extra_rows: 2,
             max_size_x: 2,
             avoid_overlapped_widgets: true,
@@ -193,36 +174,39 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           _.each(artists.models, function(artist,index){
             var source    = $('#dj-template').html(),
                 template  = Handlebars.compile(source),
-                html      = template(artist.toJSON());
+                html      = template(artist.toJSON()),
+                col       = artist.get('col')
+                row       = artist.get('row');
 
-            gridster.add_widget(html,1,1,artist.get('col'),artist.get('row'));
+            gridster.add_widget(html,1,1,col,row);
           });
         },
 
         eventsGridster: function() {
           var $widget,
               $soundcloud,
-              currentCoords,
-              originalCoords,
-              newCoords,
+              currentLocation,
+              originalLocation,
+              futureLocation,
               that = this;
 
           gridster.$el
             .on('mouseenter', '> .dj-superstar', function() {
+                console.log('inside');
                 $widget = $(this);
-                currentCoords = gridster.dom_to_coords($widget);
-                originalCoords = _.clone(currentCoords);
-                newCoords = { col: 1, row: currentCoords.row, size_x: 2, size_y: 2 };
+                currentLocation = gridster.dom_to_coords($widget);
+                originalLocation = _.clone(currentLocation);
+                futureLocation = { col: 1, row: currentLocation.row, size_x: 2, size_y: 2 };
 
-                if(currentCoords.col === 2) gridster.mutate_widget_in_gridmap($widget, currentCoords, newCoords);
-                else gridster.resize_widget($(this), 2, 2);
+                if(currentLocation.col === 2) gridster.mutate_widget_in_gridmap($widget, currentLocation, futureLocation);
+                else gridster.resize_widget($widget, 2, 2);
 
                 $soundcloud = $widget.find('.soundcloud-widget');
                 that.bigSoundCloud($soundcloud);
             })
             .on('mouseleave', '> .dj-superstar', function() {
-                if(originalCoords.col === 2) gridster.mutate_widget_in_gridmap($widget, currentCoords, originalCoords);
-                else gridster.resize_widget($(this), 1, 1);
+                if(originalLocation.col === 2) gridster.mutate_widget_in_gridmap($widget, currentLocation, originalLocation);
+                else gridster.resize_widget($widget, 1, 1);
                 that.smallSoundcloud($soundcloud);
             });
         },
@@ -256,22 +240,6 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         }
     });
  
-     module.DetailsLayoutView = Marionette.LayoutView.extend({
-        tagName: 'div',
-        id: 'DetailsLayoutView',
-        className: 'content',
- 
-        template: '#details-template',
- 
-        events: {},
- 
-        initialize: function(){console.log('Details: initialize');},
-        onRender: function(){console.log('Details: onRender');},
-        onShow: function(){console.log('Details: onShow');}
-    });
- 
-
-
     // load application 
     module.addInitializer(function(){
         var layout = new module.AppLayoutView();
