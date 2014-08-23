@@ -95,7 +95,6 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           var $window = $(window),
               $error  = this.$('#error-message');
               width   = $window.width();
-          debugger
           if(width < 1380) $error.html('<p>Site looks best at <span class="silver">1380px</span> wide, you\'re at <span class="silver">' + width + '</span>.</p>');
           else $error.html('');
         },
@@ -182,10 +181,12 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
             // helper: 'clone',
             // extra_cols: 2,
             extra_rows: 2,
-            // max_size_x: 4,
+            max_size_x: 2,
             avoid_overlapped_widgets: true,
             autogenerate_stylesheet: true
           }).data('gridster');
+
+          gridster.disable();
         },
 
         renderGridster: function() {
@@ -199,36 +200,51 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         },
 
         eventsGridster: function() {
+          var $widget,
+              $soundcloud,
+              currentCoords,
+              originalCoords,
+              newCoords,
+              that = this;
+
           gridster.$el
             .on('mouseenter', '> .dj-superstar', function() {
-                gridster.resize_widget($(this), 2, 2);
+                $widget = $(this);
+                currentCoords = gridster.dom_to_coords($widget);
+                originalCoords = _.clone(currentCoords);
+                newCoords = { col: 1, row: currentCoords.row, size_x: 2, size_y: 2 };
 
-                var $soundcloud = $(this).find('.soundcloud-widget');
-                    $soundcloud.hide();
+                if(currentCoords.col === 2) gridster.mutate_widget_in_gridmap($widget, currentCoords, newCoords);
+                else gridster.resize_widget($(this), 2, 2);
 
-                    // renders better than setting classes
-                    $soundcloud.css('margin-top', '12px');
-                    $soundcloud.css('height', '303px');
-                    $soundcloud.css('width', '532px');
-
-                    $soundcloud.fadeIn(1200);
+                $soundcloud = $widget.find('.soundcloud-widget');
+                that.bigSoundCloud($soundcloud);
             })
             .on('mouseleave', '> .dj-superstar', function() {
-                gridster.resize_widget($(this), 1, 1);
-
-                var $soundcloud = $(this).find('.soundcloud-widget');
-
-                    $soundcloud.hide();
-                    // renders better than sending classes
-                    $soundcloud.css('margin-top', '5%');
-                    $soundcloud.css('height', '110px');
-                    $soundcloud.css('width', '250px');
-
-                    $soundcloud.fadeIn(100);
-
+                if(originalCoords.col === 2) gridster.mutate_widget_in_gridmap($widget, currentCoords, originalCoords);
+                else gridster.resize_widget($(this), 1, 1);
+                that.smallSoundcloud($soundcloud);
             });
         },
         
+        smallSoundcloud: function($soundcloud) {
+          $soundcloud.hide();
+          // renders better than sending classes
+          $soundcloud.css('margin-top', '5%');
+          $soundcloud.css('height', '110px');
+          $soundcloud.css('width', '250px');
+          $soundcloud.fadeIn(100);
+        },
+
+        bigSoundCloud: function($soundcloud) {
+          $soundcloud.hide();
+          // renders better than setting classes
+          $soundcloud.css('margin-top', '12px');
+          $soundcloud.css('height', '303px');
+          $soundcloud.css('width', '532px');
+          $soundcloud.fadeIn(1200);
+        },
+
         onRender: function(){
           console.log('Lineup: onRender');
         },
