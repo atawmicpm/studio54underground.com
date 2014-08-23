@@ -41,13 +41,13 @@ body {
   font-weight: 200;
   margin-left: 40px;
   font-size: 40px;
-  border-bottom: 5px solid black;
+  /*border-bottom: 0px solid black;*/
 }
 
 .navbar-nav > li:hover {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s; 
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  transition: all 0.7s; 
   border-bottom: 5px solid #efb91f;
 }
 /*.shine {

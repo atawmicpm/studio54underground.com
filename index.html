@@ -2,11 +2,9 @@
 
   <head>
     <meta name="google-site-verification" content="_N8aqu2BildDJq_hhIdIICxT4JD6gVePNx9vKeHfYxM" />
-    <link href='http://fonts.googleapis.com/css?family=Ceviche+One|Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400' rel='stylesheet' type='text/css'>
-    
+
     <!-- STYLES -->
     <link async rel="stylesheet" href="styles/lib/bootstrap.min.css">
     <link async rel="stylesheet" href="styles/lib/jquery.gridster.min.css">
@@ -15,29 +13,15 @@
     <!-- JS LIBS -->
     <script src="scripts/lib/jquery-2.min.js"></script>
     <script async src="scripts/lib/jquery.gridster.min.js"></script>
-    <script async src="scripts/lib/underscore.min.js"></script>
-    <script async src="scripts/lib/bootstrap.min.js"></script>
+    <script src="scripts/lib/underscore.min.js"></script>
+    <script src="scripts/lib/bootstrap.min.js"></script>
     <script async src="scripts/lib/handlebars.js"></script>
     <script async src="scripts/lib/backbone.min.js"></script>        
     <script async src="scripts/lib/backbone.marionette.js"></script>
-    <script async src="scripts/lib/paper.js"></script>
     <script async src="https://w.soundcloud.com/player/api.js"></script>
 
     <!-- JS APP -->    
     <script async src="scripts/studio54.js"></script>
-
-    <script type="text/paperscript" canvas="myCanvas">
-      // Create a Paper.js Path to draw a line into it:
-      var path = new Path();
-      // Give the stroke a color
-      path.strokeColor = 'black';
-      var start = new Point(100, 100);
-      // Move to start and draw a line from there
-      path.moveTo(start);
-      // Note the plus operator on Point objects.
-      // PaperScript does that for us, and much more!
-      path.lineTo(start + [ 100, -50 ]);
-    </script>
 
     <!-- TEMPLATES -->
     <script type="text/template" id="layout-template">
