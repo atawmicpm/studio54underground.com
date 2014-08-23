@@ -82,17 +82,19 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         },
  
         events: {
-          'click #nav-presales': 'showPresales',
-          'click #nav-lineup': 'showLineup',
-          'click #nav-details': 'renderDetails'
+          'click #nav-presales'   : 'showPresales',
+          'click #nav-lineup'     : 'showLineup',
+          'click #nav-directions' : 'showDirections',
+          'click #nav-artshow'    : 'showArtShow'
         },
 
         initialize: function() {},
  
         checkBrowserWidth: function(event) {
           var $window = $(window),
-              $error  = this.$('#error-message');
+              $error  = this.$('#error-message'),
               width   = $window.width();
+
           if(width < 1380) $error.html('<p>Site looks best at <span class="silver">1380px</span> wide, you\'re at <span class="silver">' + width + '</span>.</p>');
           else $error.html('');
         },
@@ -103,17 +105,48 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           $(event.currentTarget).addClass('active');
         },
 
+        positionLogo: function(page) {
+          if (!this.$logo) this.$logo = $('#logo');
+          var logoClass = this.$logo.attr('class');
+
+          if (page !== logoClass) {
+            this.$logo.hide();
+            this.$logo.removeClass(logoClass);
+            this.$logo.addClass(page);
+            this.$logo.fadeIn();
+          } 
+        },
+
         showLineup: function(event) {
           this.updateNav(event);
-          this.$('#presales').hide();
+          this.positionLogo('lineup');
           this.$('#lineup').fadeIn(2000);
           this.$('.soundcloud-widget').fadeIn();
         },
 
         showPresales: function(event) {
           this.updateNav(event);
+          this.positionLogo('presales');
+
           this.$('#lineup').hide();
-          this.$('#presales').fadeIn();
+          this.positionLogo('presales');
+
+          // this.$('#presales').fadeIn();
+        },
+
+        showArtShow: function(event) {
+          this.updateNav(event);
+          this.positionLogo('lineup');
+          this.$('#lineup').hide();
+          this.$('#artshow').fadeIn();
+        },
+
+        showDirections: function(event) {
+          this.updateNav(event);
+          this.positionLogo('lineup');
+          this.$('#lineup').hide();
+          this.$('#artshow').hide();
+          this.$('#directions').fadeIn();
         },
 
         renderPresales: function(event) {
@@ -127,8 +160,14 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           this.Content.show(lineupLayout);
         },
 
-        renderDetails: function(event) {
-          var detailsLayout = new module.DetailsLayoutView();
+        renderDirections: function(event) {
+          var detailsLayout = new module.DirectionsLayoutView();
+          this.Content.show(detailsLayout);
+          this.updateNav(event);
+        },
+
+        renderArtShow: function(event) {
+          var detailsLayout = new module.DirectionsLayoutView();
           this.Content.show(detailsLayout);
           this.updateNav(event);
         },
@@ -192,7 +231,6 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
 
           gridster.$el
             .on('mouseenter', '> .dj-superstar', function() {
-                console.log('inside');
                 $widget = $(this);
                 currentLocation = gridster.dom_to_coords($widget);
                 originalLocation = _.clone(currentLocation);
