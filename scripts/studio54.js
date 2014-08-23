@@ -224,7 +224,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           $soundcloud.hide();
           // renders better than setting classes
           $soundcloud.css('height', '300px');
-          $soundcloud.css('width', '724px');
+          $soundcloud.css('width', '728px');
           $soundcloud.fadeIn(1200);
         },
 

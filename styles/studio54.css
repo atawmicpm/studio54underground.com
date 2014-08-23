@@ -88,12 +88,13 @@ body {
 
 .name {
     position: absolute;
-    top:-5px;
-    left:-5px;
-    border: 1px solid #efb91f;
+    top:-11px;
+    left:-2px;
+    /*border-left: 2px solid #efb91f;*/
+    border-bottom: 2px solid #efb91f;
     color: #efb91f;
     display: inline-block;
-    background-color: black;
+    /*background-color: black;*/
     font-family: 'Dosis', sans-serif;
     /*background-image: url('../images/dj-name-gold.png');*/
     margin-top: -30px;
