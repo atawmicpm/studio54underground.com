@@ -113,13 +113,14 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
             this.$logo.hide();
             this.$logo.removeClass(logoClass);
             this.$logo.addClass(page);
-            this.$logo.fadeIn();
+           
+            if (page !== 'hide') this.$logo.fadeIn();
           } 
         },
 
         showLineup: function(event) {
           this.updateNav(event);
-          this.positionLogo('lineup');
+          this.positionLogo('hide');
           this.$('#lineup').fadeIn(2000);
           this.$('.soundcloud-widget').fadeIn();
         },
