@@ -173,6 +173,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         },
 
         onRender: function() {
+          if( ! Backbone.History.started) Backbone.history.start();
         },
  
         onShow: function() {
