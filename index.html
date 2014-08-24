@@ -30,6 +30,24 @@
     <script type="text/template" id="lineup-template">
         <div id="presales">
           <img id="logo" class="presales" src="images/studio54_logo.png">
+
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="MV6YGLVTXQEKC">
+            <table>
+            <tr><td><input type="hidden" name="on0" value="# tickets"># tickets</td></tr><tr><td><select name="os0">
+              <option value="1">1 </option>
+              <option value="2">2 </option>
+              <option value="3">3 </option>
+              <option value="4">4 </option>
+              <option value="5">5 </option>
+              <option value="6">6 </option>
+            </select> </td></tr>
+            </table>
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+
         </div>
         <div id="lineup"></div>
         <div id="artshow"></div>
@@ -54,15 +72,15 @@
     <div id="studio54underground"></div>
 
     <!-- JS LIBS -->
-    <script src="scripts/lib/jquery-2.min.js"></script>
-    <script src="scripts/lib/jquery.gridster.min.js"></script>
-    <script src="scripts/lib/underscore.min.js"></script>
-    <script src="scripts/lib/bootstrap.min.js"></script>
-    <script src="scripts/lib/handlebars.js"></script>
-    <script src="scripts/lib/backbone.min.js"></script>        
-    <script src="scripts/lib/backbone.marionette.js"></script>
-    <script src="https://w.soundcloud.com/player/api.js"></script>
-
+<!--     // <script src="scripts/lib/jquery-2.min.js"></script>
+    // <script src="scripts/lib/jquery.gridster.min.js"></script>
+    // <script src="scripts/lib/underscore.min.js"></script>
+    // <script src="scripts/lib/bootstrap.min.js"></script>
+    // <script src="scripts/lib/handlebars.js"></script>
+    // <script src="scripts/lib/backbone.min.js"></script>        
+    // <script src="scripts/lib/backbone.marionette.js"></script>
+    // <script src="https://w.soundcloud.com/player/api.js"></script> -->
+    <script src="scripts/lib/default.js"></script>
     <!-- JS APP -->    
     <script src="scripts/studio54.js"></script>
   </body>

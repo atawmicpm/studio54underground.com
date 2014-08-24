@@ -231,12 +231,14 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
 
           gridster.$el
             .on('mouseenter', '> .dj-superstar', function() {
-                $widget = $(this);
-                currentLocation = gridster.dom_to_coords($widget);
+                $widget          = $(this);
+                currentLocation  = gridster.dom_to_coords($widget);
                 originalLocation = _.clone(currentLocation);
-                futureLocation = { col: 1, row: currentLocation.row, size_x: 2, size_y: 2 };
+                futureLocation   = { col: 1, row: currentLocation.row, size_x: 2, size_y: 2 };
 
-                if(currentLocation.col === 2) gridster.mutate_widget_in_gridmap($widget, currentLocation, futureLocation);
+                // if (currentLocation.row === 4) futureLocation.row = 3;
+                
+                if (currentLocation.col === 2) gridster.mutate_widget_in_gridmap($widget, currentLocation, futureLocation);
                 else gridster.resize_widget($widget, 2, 2);
 
                 $soundcloud = $widget.find('.soundcloud-widget');
