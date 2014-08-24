@@ -37,7 +37,9 @@ body {
 
 }*/
 
-
+#paypal-button {
+  display:none;
+}
 
 .navbar-nav {
   position: absolute;

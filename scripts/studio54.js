@@ -59,7 +59,7 @@ var artists = new Artists([
     photo: 'https://i1.sndcdn.com/avatars-000084720176-mq6noe-t500x500.jpg',
     col: 2,
     row: 4
-  },
+  }
 ]);
 
 
@@ -78,7 +78,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         template: '#layout-template',
  
         regions: {
-            'Content' : '#content',
+            'Content' : '#content'
         },
  
         events: {
@@ -237,7 +237,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
                 futureLocation   = { col: 1, row: currentLocation.row, size_x: 2, size_y: 2 };
 
                 // if (currentLocation.row === 4) futureLocation.row = 3;
-                
+
                 if (currentLocation.col === 2) gridster.mutate_widget_in_gridmap($widget, currentLocation, futureLocation);
                 else gridster.resize_widget($widget, 2, 2);
 
