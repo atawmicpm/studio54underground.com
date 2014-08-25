@@ -234,17 +234,20 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           gridster.$el
             .on('mouseenter', '> .dj-superstar', function() {
                 $widget          = $(this);
+                $soundcloud      = $widget.find('.soundcloud-widget');
                 currentLocation  = gridster.dom_to_coords($widget);
                 originalLocation = _.clone(currentLocation);
                 futureLocation   = { col: 1, row: currentLocation.row, size_x: 2, size_y: 2 };
 
                 // if (currentLocation.row >= 4) $("html, body").animate({ scrollTop: $(document).height() }, "fast");
 
-                if (currentLocation.col === 2) gridster.mutate_widget_in_gridmap($widget, currentLocation, futureLocation);
-                else gridster.resize_widget($widget, 2, 2);
+                // setTimeout(function(){
+                  if (currentLocation.col === 2) gridster.mutate_widget_in_gridmap($widget, currentLocation, futureLocation);
+                  else gridster.resize_widget($widget, 2, 2);
 
-                $soundcloud = $widget.find('.soundcloud-widget');
-                that.bigSoundCloud($soundcloud);
+                  that.bigSoundCloud($soundcloud);
+                // },200);
+
             })
             .on('mouseleave', '> .dj-superstar', function() {
                 if(originalLocation.col === 2) gridster.mutate_widget_in_gridmap($widget, currentLocation, originalLocation);
@@ -259,15 +262,18 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           // $soundcloud.css('margin-top', '5px');
           $soundcloud.css('height', '122px');
           $soundcloud.css('width', '365px');
-          $soundcloud.fadeIn(100);
+          $soundcloud.fadeIn(1500);
         },
 
         bigSoundCloud: function($soundcloud) {
-          $soundcloud.hide();
-          // renders better than setting classes
-          $soundcloud.css('height', '300px');
-          $soundcloud.css('width', '728px');
-          $soundcloud.fadeIn(1200);
+          // setTimeout(function(){
+            $soundcloud.hide();
+            // renders better than setting classes
+            $soundcloud.css('height', '300px');
+            $soundcloud.css('width', '728px');
+            $soundcloud.fadeIn(2500);
+          // }, 1000);
+
         },
 
         onRender: function(){
