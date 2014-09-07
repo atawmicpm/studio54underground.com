@@ -1,7 +1,7 @@
 #logo.presales {
   position: absolute;
   bottom: 100px;
-  left: 10%; 
+  left: 140px; 
   height: 490px;
   width: 430px;
   /*background-image: url('../images/studio54_logo.png');*/
@@ -18,9 +18,63 @@
   z-index: -1001;
 }
 
-.artshow.
+#logo.artshow {
+  position: absolute;
+  bottom: 30px;
+  right: 6%; 
+  height: 200px;
+  width: 176px;
+  z-index: -1001;
+}
 
-directions
+.presale-form {
+  position: absolute;
+  top: 135px;
+  left: 245px;
+}
+
+.presale-dropdown {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+  float: left;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.presale-button {
+  position: absolute;
+  height: 80px;
+  width: 200px;
+  border: 1px solid #efb91f;
+  background-color: #efb91f;
+  color: #666;
+  font-size: 30px;
+  border-radius: 5px;
+  float: left;
+  cursor: pointer;
+  background-image: url('../images/buy-now.png');
+}
+
+.presale-button:hover {
+    transition: all 0.2s;
+    border: 5px solid #efb91f;
+    color: black;
+}
+
+.presale-text {
+  position: absolute;
+  height: 85px;
+  top: 100px;
+  left: 245px;
+  z-index: -2001;
+  font-size: 20px;
+  font-family: 'Dosis', sans-serif;
+  color: #efb91f;
+  z-inde
+
+}
 
 ul {
   list-style-type: none;
@@ -84,6 +138,27 @@ body {
   margin-top: 90px;
 }
 
+#artshow {
+  display: none;
+  margin-left: 1%;
+  margin-top: 90px;
+}
+
+#directions {
+  display: none;
+  margin-left: 1%;
+  margin-top: 90px;
+}
+
+.directions {
+  position: absolute;
+  font-size: 20px;
+  color: #efb91f;
+  left: 250px;
+  top: 150px;
+
+}
+
 .dj-superstar {
   display: none;
   position: absolute;
@@ -97,13 +172,54 @@ body {
   display: inline-block;
 }
 
+.masterpiece {
+  /*padding: 20px;*/
+  display: none;
+  position: absolute;
+  z-index: 10;
+  color: silver;
+  /*background-color: #efb91f;*/
+  /*background-image: url('../images/dj-superstar-gold.png');*/
+  /*background-image: url('../images/gradient-record.png');*/
+  background-image: url('../images/frame.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /*border: 2px solid #efb91f;*/
+  /*border: 2px solid black;*/
+  display: inline-block; 
+  padding: 20px;
+  min-height: 250px;
+  /*margin: 20px;*/
+  /*margin: 20px;*/
+  max-height: 700px;
+}
+
+.masterpiece > .frame > .photo {
+  /*max-height: 80%;*/
+  /*max-width: 80%;*/
+  border-radius: 5px;
+  max-height: 30%;
+  width: 99%;
+  /*max-width: 99%;*/
+  margin: 0px auto;
+
+}
+
+.masterpiee > .name {
+  position: absolute;
+  top: 30%;
+  left: -2%;
+  display: inline-block;
+  font-family: 'Dosis', sans-serif;
+}
+
 .dj-superstar:hover {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s; 
 }
 
-.name {
+.dj-superstar > .name {
     position: absolute;
     top:-9px;
     left:-2px;
@@ -123,7 +239,7 @@ body {
     margin-bottom: 5px;
     font-size: 25px; }
 
-.photo {
+.dj-superstar > .photo {
   max-height: 99%;
   /*max-width: %;*/
   float: left;

@@ -2,7 +2,8 @@
 // by Phillip
 
 var Artists = Backbone.Collection.extend();
- 
+var Masterpieces = Backbone.Collection.extend();
+
 var artists = new Artists([
   {
     name: 'Ethan Miller',
@@ -12,9 +13,9 @@ var artists = new Artists([
     row: 1
   },
   {
-    name: 'Chipper Guy',
-    mix: 'https://soundcloud.com/chipper-guy',
-    photo: 'https://i1.sndcdn.com/avatars-000023321689-cqclvs-t500x500.jpg',
+    name: 'Micron',
+    mix: 'https://soundcloud.com/la-cosa-nostra-micron',
+    photo: 'https://i1.sndcdn.com/avatars-000040396912-4jrsiz-t500x500.jpg',
     col: 1,
     row: 3
   },
@@ -26,11 +27,11 @@ var artists = new Artists([
     row: 2
   },
   {
-    name: 'Tiesto',
-    mix: 'https://soundcloud.com/tiesto',
-    photo: 'https://i1.sndcdn.com/avatars-000080089386-wy50vf-t500x500.jpg',
-    col: 1,
-    row: 4
+    name: 'Lick the DJ',
+    mix: 'https://soundcloud.com/lickthedj',
+    photo: 'https://i1.sndcdn.com/avatars-000001512740-lb7m6k-t500x500.jpg',
+    col: 2,
+    row: 3
   },
   {
     name: 'Alixr',
@@ -51,17 +52,117 @@ var artists = new Artists([
     mix: 'https://soundcloud.com/djkeleesilva',
     photo: 'https://i1.sndcdn.com/avatars-000003531961-f3fid3-t500x500.jpg',
     col: 2,
-    row: 3
+    row: 4
   },
   {
-    name: 'Paul Oakenfold',
-    mix: 'https://soundcloud.com/pauloakenfold',
-    photo: 'https://i1.sndcdn.com/avatars-000084720176-mq6noe-t500x500.jpg',
-    col: 2,
+    name: 'Lt. Daaan',
+    mix: 'https://soundcloud.com/ltdaaan',
+    photo: 'https://i1.sndcdn.com/avatars-000071834613-tiljds-t500x500.jpg',
+    col: 1,
     row: 4
   }
 ]);
 
+var masterpieces = new Masterpieces([
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://uploads0.wikiart.org/images/vincent-van-gogh/wheat-field-with-cypresses-1889.jpg',
+    col: 1,
+    row: 1
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://4.bp.blogspot.com/-QeoHSfWQ0bg/UO9PnLmySOI/AAAAAAAAQE8/C1HWqQrfdyE/s1600/Van-Gogh-Painting-1.jpg',
+    col: 1,
+    row: 2
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://uploads0.wikiart.org/images/vincent-van-gogh/wheat-field-with-cypresses-1889.jpg',
+    col: 1,
+    row: 3
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://4.bp.blogspot.com/-QeoHSfWQ0bg/UO9PnLmySOI/AAAAAAAAQE8/C1HWqQrfdyE/s1600/Van-Gogh-Painting-1.jpg',
+    col: 1,
+    row: 4
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://uploads0.wikiart.org/images/vincent-van-gogh/wheat-field-with-cypresses-1889.jpg',
+    col: 2,
+    row: 1
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://4.bp.blogspot.com/-QeoHSfWQ0bg/UO9PnLmySOI/AAAAAAAAQE8/C1HWqQrfdyE/s1600/Van-Gogh-Painting-1.jpg',
+    col: 2,
+    row: 2
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://uploads0.wikiart.org/images/vincent-van-gogh/wheat-field-with-cypresses-1889.jpg',
+    col: 2,
+    row: 3
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://4.bp.blogspot.com/-QeoHSfWQ0bg/UO9PnLmySOI/AAAAAAAAQE8/C1HWqQrfdyE/s1600/Van-Gogh-Painting-1.jpg',
+    col: 2,
+    row: 4
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://uploads0.wikiart.org/images/vincent-van-gogh/wheat-field-with-cypresses-1889.jpg',
+    col: 3,
+    row: 1
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://4.bp.blogspot.com/-QeoHSfWQ0bg/UO9PnLmySOI/AAAAAAAAQE8/C1HWqQrfdyE/s1600/Van-Gogh-Painting-1.jpg',
+    col: 3,
+    row: 2
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://uploads0.wikiart.org/images/vincent-van-gogh/wheat-field-with-cypresses-1889.jpg',
+    col: 3,
+    row: 3
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://4.bp.blogspot.com/-QeoHSfWQ0bg/UO9PnLmySOI/AAAAAAAAQE8/C1HWqQrfdyE/s1600/Van-Gogh-Painting-1.jpg',
+    col: 3,
+    row: 4
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://uploads0.wikiart.org/images/vincent-van-gogh/wheat-field-with-cypresses-1889.jpg',
+    col: 4,
+    row: 1
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://4.bp.blogspot.com/-QeoHSfWQ0bg/UO9PnLmySOI/AAAAAAAAQE8/C1HWqQrfdyE/s1600/Van-Gogh-Painting-1.jpg',
+    col: 4,
+    row: 2
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://uploads0.wikiart.org/images/vincent-van-gogh/wheat-field-with-cypresses-1889.jpg',
+    col: 4,
+    row: 3
+  },
+  {
+    name: 'Vincent van Gogh',
+    photo: 'http://4.bp.blogspot.com/-QeoHSfWQ0bg/UO9PnLmySOI/AAAAAAAAQE8/C1HWqQrfdyE/s1600/Van-Gogh-Painting-1.jpg',
+    col: 4,
+    row: 4
+  }
+
+
+]);
 
 var app = new Backbone.Marionette.Application();
  
@@ -84,11 +185,13 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         events: {
           'click #nav-presales'   : 'showPresales',
           'click #nav-lineup'     : 'showLineup',
-          'click #nav-directions' : 'showDirections',
-          'click #nav-artshow'    : 'showArtShow'
+          'click #nav-artshow'    : 'showArtShow',
+          'click #nav-directions' : 'showDirections'
         },
 
-        initialize: function() {},
+        initialize: function() {
+          this.pages = ['presales', 'lineup', 'artshow', 'directions'];
+        },
  
         checkBrowserWidth: function(event) {
           var $window = $(window),
@@ -118,33 +221,43 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
           } 
         },
 
+        hideAllPagesExcept: function(shownPage) {
+          _.each(this.pages, function(hiddenPage, index) {
+            if (hiddenPage !== shownPage) this.$('#' + hiddenPage).hide();
+          });
+        },
+
         showLineup: function(event) {
+          // debugger
+          if (this.Content.currentView != this.lineupLayout) this.renderLineup();
+
+          // if (this.Content)
           this.updateNav(event);
           this.positionLogo('hide');
+          this.hideAllPagesExcept('lineup');
           this.$('#lineup').fadeIn(2000);
-          this.$('.soundcloud-widget').fadeIn();
+          this.$('.soundcloud-widget').fadeIn(1000);
         },
 
         showPresales: function(event) {
           this.updateNav(event);
           this.positionLogo('presales');
-
-          this.$('#lineup').hide();
-          this.positionLogo('presales');
-
-          // this.$('#presales').fadeIn();
+          this.hideAllPagesExcept('presales')
+          this.$('#presales').fadeIn();
         },
 
         showArtShow: function(event) {
           this.updateNav(event);
-          this.positionLogo('lineup');
-          this.$('#lineup').hide();
-          this.$('#artshow').fadeIn();
+          this.positionLogo('artshow');
+          this.hideAllPagesExcept('artshow');
+          this.renderArtShow();
+          this.$('#artshow').fadeIn(1000);
         },
 
         showDirections: function(event) {
           this.updateNav(event);
           this.positionLogo('lineup');
+          this.hideAllPagesExcept('directions');
           this.$('#lineup').hide();
           this.$('#artshow').hide();
           this.$('#directions').fadeIn();
@@ -157,8 +270,8 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         },
 
         renderLineup: function(event) {
-          var lineupLayout = new module.LineupLayoutView();
-          this.Content.show(lineupLayout);
+          this.lineupLayout = new module.LineupLayoutView();
+          this.Content.show(this.lineupLayout);
         },
 
         renderDirections: function(event) {
@@ -168,8 +281,8 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         },
 
         renderArtShow: function(event) {
-          var detailsLayout = new module.DirectionsLayoutView();
-          this.Content.show(detailsLayout);
+          var artshowLayout = new module.ArtShowLayoutView();
+          this.Content.show(artshowLayout);
           this.updateNav(event);
         },
 
@@ -184,6 +297,86 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         }
     });
  
+    // ART SHOW
+    module.ArtShowLayoutView = Marionette.LayoutView.extend({
+      tagName: 'div',
+      id: 'artshow',
+      className: 'content',
+
+      template: '#artshow-template',
+
+      events: {},
+
+      initialize: function() {
+      },
+
+      initGridster: function() {
+        this.gridster = $("#artshow").gridster({
+          widget_selector: '.masterpiece',
+          widget_margins: [10, 10],
+          widget_base_dimensions: [300, 250],
+          extra_rows: 4,
+          max_size_x: 4,
+          avoid_overlapped_widgets: true,
+          autogenerate_stylesheet: true
+        }).data('gridster');
+
+        this.gridster.disable();
+      },
+
+
+      renderGridster: function() {
+        var that = this,
+            widgets = [];
+
+        _.each(masterpieces.models, function(masterpiece,index){
+          var source    = $('#masterpiece-template').html(),
+              template  = Handlebars.compile(source),
+              html      = template(masterpiece.toJSON()),
+              col       = masterpiece.get('col')
+              row       = masterpiece.get('row');
+
+          var $widget = that.gridster.add_widget(html,1,1,col,row);
+          widgets.push($widget);
+
+          _.each(widgets, function($widget,index){
+            debugger;
+          });
+          // debugger;
+        });
+      },
+
+      eventsGridster: function() {
+        var $widget,
+            currentLocation,
+            originalLocation,
+            futureLocation,
+            that = this;
+
+        this.gridster.$el
+          .on('mouseenter', '> .masterpiece', function() {
+              $widget          = $(this);
+              currentLocation  = that.gridster.dom_to_coords($widget);
+              originalLocation = _.clone(currentLocation);
+              futureLocation   = { col: (currentLocation.col - 1), row: currentLocation.row, size_x: 2, size_y: 3 };
+
+              // if (currentLocation.row >= 4) $("html, body").animate({ scrollTop: $(document).height() }, "fast");
+
+              if (currentLocation.col > 1) that.gridster.mutate_widget_in_gridmap($widget, currentLocation, futureLocation);
+              else that.gridster.resize_widget($widget, 2, 3);
+          })
+          .on('mouseleave', '> .masterpiece', function() {
+              if(originalLocation.col > 1) that.gridster.mutate_widget_in_gridmap($widget, currentLocation, originalLocation);
+              else that.gridster.resize_widget($widget, 1, 1);
+          });
+      },
+
+      onShow: function(){
+        this.initGridster();
+        this.renderGridster();
+        this.eventsGridster();
+      }
+    });
     // PAGE VIEW
     module.LineupLayoutView = Marionette.LayoutView.extend({
         tagName: 'div',
@@ -198,7 +391,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
         },
 
         initGridster: function() {
-          gridster = $("#lineup").gridster({
+          this.gridster = $("#lineup").gridster({
             widget_selector: '.dj-superstar',
             widget_margins: [20, 24],
             widget_base_dimensions: [500, 130],
@@ -208,10 +401,12 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
             autogenerate_stylesheet: true
           }).data('gridster');
 
-          gridster.disable();
+          this.gridster.disable();
         },
 
         renderGridster: function() {
+          var that = this;
+
           _.each(artists.models, function(artist,index){
             var source    = $('#dj-template').html(),
                 template  = Handlebars.compile(source),
@@ -219,7 +414,7 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
                 col       = artist.get('col')
                 row       = artist.get('row');
 
-            gridster.add_widget(html,1,1,col,row);
+            that.gridster.add_widget(html,1,1,col,row);
           });
         },
 
@@ -231,27 +426,24 @@ app.module('App',function(module, App, Backbone, Marionette, $, _){
               futureLocation,
               that = this;
 
-          gridster.$el
+          this.gridster.$el
             .on('mouseenter', '> .dj-superstar', function() {
                 $widget          = $(this);
                 $soundcloud      = $widget.find('.soundcloud-widget');
-                currentLocation  = gridster.dom_to_coords($widget);
+                currentLocation  = that.gridster.dom_to_coords($widget);
                 originalLocation = _.clone(currentLocation);
                 futureLocation   = { col: 1, row: currentLocation.row, size_x: 2, size_y: 2 };
 
                 // if (currentLocation.row >= 4) $("html, body").animate({ scrollTop: $(document).height() }, "fast");
 
-                // setTimeout(function(){
-                  if (currentLocation.col === 2) gridster.mutate_widget_in_gridmap($widget, currentLocation, futureLocation);
-                  else gridster.resize_widget($widget, 2, 2);
+                  if (currentLocation.col > 1) that.gridster.mutate_widget_in_gridmap($widget, currentLocation, futureLocation);
+                  else that.gridster.resize_widget($widget, 2, 2);
 
                   that.bigSoundCloud($soundcloud);
-                // },200);
-
             })
             .on('mouseleave', '> .dj-superstar', function() {
-                if(originalLocation.col === 2) gridster.mutate_widget_in_gridmap($widget, currentLocation, originalLocation);
-                else gridster.resize_widget($widget, 1, 1);
+                if(originalLocation.col > 1) that.gridster.mutate_widget_in_gridmap($widget, currentLocation, originalLocation);
+                else that.gridster.resize_widget($widget, 1, 1);
                 that.smallSoundcloud($soundcloud);
             });
         },
