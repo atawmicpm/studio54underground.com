@@ -47,7 +47,9 @@
   position: absolute;
   height: 80px;
   width: 200px;
-  border: 1px solid #efb91f;
+  border: 3px solid #efb91f;
+  border-right: 3px solid #efb91f;
+  border-bottom: 3px solid #efb91f;
   background-color: #efb91f;
   color: #666;
   font-size: 30px;
@@ -59,7 +61,8 @@
 
 .presale-button:hover {
     transition: all 0.2s;
-    border: 5px solid #efb91f;
+    border: 1px solid #efb91f;
+    border-right: 1px solid #efb91f;
     color: black;
 }
 
