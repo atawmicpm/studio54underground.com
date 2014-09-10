@@ -1,9 +1,11 @@
 #logo.presales {
+  display: none;
   position: absolute;
-  bottom: 50px;
-  left: 140px; 
-  height: 490px;
-  width: 430px;
+  margin: 0 auto;
+  /*bottom: 50px;*/
+  /*left: 140px; */
+  /*height: 490px;*/
+  /*width: 430px;*/
   /*background-image: url('../images/studio54_logo.png');*/
   /*background-repeat: no-repeat; */
   z-index: -1001;
@@ -86,9 +88,9 @@ ul {
 body { 
   background-color: black;
   color: silver;
-  background-image: url('../images/studio54_discoball.jpg');
+  background-image: url('../images/dance_people.jpg');
   background-repeat: no-repeat; 
-  background-position: right top;
+  background-position: center bottom;
 }
 
 /*@media only screen and (max-width: 320px) {
