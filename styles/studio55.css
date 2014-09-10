@@ -1,0 +1,288 @@
+#logo.presales {
+  width: 1000px;
+  bottom: 5px;
+  /*display: none;*/
+  position: absolute;
+  margin: 0 auto;
+  /*bottom: 50px;*/
+  /*left: 140px; */
+  /*height: 490px;*/
+  /*width: 430px;*/
+  /*background-image: url('../images/studio54_logo.png');*/
+  /*background-repeat: no-repeat; */
+  z-index: -1001;
+}
+
+#logo.lineup {
+  position: absolute;
+  bottom: 30px;
+  right: 6%; 
+  height: 200px;
+  width: 176px;
+  z-index: -1001;
+}
+
+#logo.artshow {
+  position: absolute;
+  bottom: 30px;
+  right: 6%; 
+  height: 200px;
+  width: 176px;
+  z-index: -1001;
+}
+
+/*.presale-form {
+  position: absolute;
+  top: 125px;
+  left: 245px;
+}*/
+.party-date {
+  font-size: 40px;
+  margin-right: 50px;
+    font-family: 'Dosis', sans-serif;
+    color: #efb91f;
+
+
+}
+.presale-dropdown {
+  height: 60px;
+  width: 80px;
+  margin-right: 10px;
+  float: left;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+.presale-button {
+  position: absolute;
+  height: 60px;
+  width: 200px;
+  border: 3px solid #efb91f;
+  border-right: 3px solid #efb91f;
+  border-bottom: 3px solid #efb91f;
+  background-color: #efb91f;
+  color: #666;
+  font-size: 30px;
+  border-radius: 5px;
+  float: left;
+  cursor: pointer;
+  background-image: url('../images/buy-now.png');
+}
+
+.presale-button:hover {
+    transition: all 0.2s;
+    border: 1px solid #efb91f;
+    border-right: 1px solid #efb91f;
+    color: black;
+}
+
+.presale-text {
+  /*position: absolute;*/
+  /*height: 85px;*/
+  /*top: 100px;*/
+  /*left: 245px;*/
+  z-index: -2001;
+  font-size: 20px;
+  font-family: 'Dosis', sans-serif;
+  color: #efb91f;
+  /*z-inde*/
+
+}
+
+#buttons {
+    float:right;
+    position:relative;
+    left:-50%;
+    text-align:left;
+    margin-bottom: 40px;
+}
+#buttons ul{
+    list-style:none;
+    position:relative;
+    left:50%;
+}
+
+#buttons li{float:left;position:relative;}/* ie needs position:relative here*/
+
+
+ul {
+  list-style-type: none;
+}
+
+body { 
+  background-color: black;
+  color: silver;
+  background-image: url('../images/golden_notes.jpg');
+  background-repeat: no-repeat; 
+  background-position: top center;
+}
+
+/*@media only screen and (max-width: 320px) {
+   body { font-size: 2em; }
+
+}*/
+
+#paypal-button {
+  display:none;
+}
+
+.navbar-nav {
+  position: absolute;
+  top: 0px;
+  left: 6%;
+  cursor: pointer;
+}
+
+.navbar-nav > li {
+  color: #efb91f;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 200;
+  margin-left: 40px;
+  font-size: 40px;
+  /*border-bottom: 0px solid black;*/
+}
+
+.navbar-nav > li:hover {
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  transition: all 0.7s; 
+  border-bottom: 5px solid #efb91f;
+}
+
+.active {
+  border-bottom: 5px solid #efb91f;
+}
+
+#error-message {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
+  float: right;
+  margin-left: 50px;
+  margin-top: 12px;
+  color: #777;
+}
+#lineup {
+  display: none;
+  background-color: black;
+  /*margin-left: 1%;*/
+  /*margin-top: 90px;*/
+  margin: 0 auto;
+}
+
+#artshow {
+  display: none;
+  margin-left: 1%;
+  margin-top: 90px;
+}
+
+#directions {
+  display: none;
+  /*margin-left: 1%;*/
+  /*margin-top: 90px;*/
+}
+
+.directions {
+  font-size: 20px;
+  color: #efb91f;
+
+}
+
+.dj-superstar {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  color: silver;
+  background-color: #efb91f;
+  /*background-image: url('../images/dj-superstar-gold.png');*/
+  background-image: url('../images/dj-superstar-gold.jpg');
+  border: 2px solid #efb91f;
+  /*border: 2px solid black;*/
+  display: inline-block;
+}
+
+.masterpiece {
+  /*padding: 20px;*/
+  display: none;
+  position: absolute;
+  z-index: 10;
+  color: silver;
+  /*background-color: #efb91f;*/
+  /*background-image: url('../images/dj-superstar-gold.png');*/
+  /*background-image: url('../images/gradient-record.png');*/
+  background-image: url('../images/frame.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /*border: 2px solid #efb91f;*/
+  /*border: 2px solid black;*/
+  display: inline-block; 
+  padding: 20px;
+  min-height: 250px;
+  /*margin: 20px;*/
+  /*margin: 20px;*/
+  max-height: 700px;
+}
+
+.masterpiece > .frame > .photo {
+  /*max-height: 80%;*/
+  /*max-width: 80%;*/
+  border-radius: 5px;
+  max-height: 30%;
+  width: 99%;
+  /*max-width: 99%;*/
+  margin: 0px auto;
+
+}
+
+.masterpiee > .name {
+  position: absolute;
+  top: 30%;
+  left: -2%;
+  display: inline-block;
+  font-family: 'Dosis', sans-serif;
+}
+
+.dj-superstar:hover {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s; 
+}
+
+.dj-superstar > .name {
+    position: absolute;
+    top:-9px;
+    left:-2px;
+    /*border-left: 2px solid #efb91f;*/
+    /*border-bottom: 2px solid #efb91f;*/
+    color: #efb91f;
+    display: inline-block;
+    /*background-color: black;*/
+    font-family: 'Dosis', sans-serif;
+
+    /*background-image: url('../images/dj-name-gold.png');*/
+    margin-top: -30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 3px;
+    z-index: 1000;
+    margin-bottom: 5px;
+    font-size: 25px; }
+
+.dj-superstar > .photo {
+  max-height: 99%;
+  /*max-width: %;*/
+  float: left;
+  margin: 2px;
+  padding: 5px;
+  /*margin-top: 10px;*/
+  border-radius: 5px;
+}
+
+.soundcloud-widget {
+  display: none;
+  float: left;
+  margin-top: 2px;
+  padding: 5px;
+  height: 125px;
+  width: 365px;
+}
