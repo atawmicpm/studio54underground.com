@@ -1,5 +1,7 @@
 #logo.presales {
-  display: none;
+  width: 1000px;
+  bottom: 5px;
+  /*display: none;*/
   position: absolute;
   margin: 0 auto;
   /*bottom: 50px;*/
@@ -29,12 +31,19 @@
   z-index: -1001;
 }
 
-.presale-form {
+/*.presale-form {
   position: absolute;
   top: 125px;
   left: 245px;
-}
+}*/
+.party-date {
+  font-size: 40px;
+  margin-right: 50px;
+    font-family: 'Dosis', sans-serif;
+    color: #efb91f;
 
+
+}
 .presale-dropdown {
   height: 60px;
   width: 80px;
@@ -69,17 +78,33 @@
 }
 
 .presale-text {
-  position: absolute;
-  height: 85px;
-  top: 100px;
-  left: 245px;
+  /*position: absolute;*/
+  /*height: 85px;*/
+  /*top: 100px;*/
+  /*left: 245px;*/
   z-index: -2001;
   font-size: 20px;
   font-family: 'Dosis', sans-serif;
   color: #efb91f;
-  z-inde
+  /*z-inde*/
 
 }
+
+#buttons {
+    float:right;
+    position:relative;
+    left:-50%;
+    text-align:left;
+    margin-bottom: 40px;
+}
+#buttons ul{
+    list-style:none;
+    position:relative;
+    left:50%;
+}
+
+#buttons li{float:left;position:relative;}/* ie needs position:relative here*/
+
 
 ul {
   list-style-type: none;
@@ -88,9 +113,9 @@ ul {
 body { 
   background-color: black;
   color: silver;
-  background-image: url('../images/dance_people.jpg');
+  background-image: url('../images/golden_notes.jpg');
   background-repeat: no-repeat; 
-  background-position: center bottom;
+  background-position: top center;
 }
 
 /*@media only screen and (max-width: 320px) {
@@ -139,8 +164,9 @@ body {
 }
 #lineup {
   display: none;
-  margin-left: 1%;
-  margin-top: 90px;
+  /*margin-left: 1%;*/
+  /*margin-top: 90px;*/
+  margin: 0 auto;
 }
 
 #artshow {
@@ -151,16 +177,13 @@ body {
 
 #directions {
   display: none;
-  margin-left: 1%;
-  margin-top: 90px;
+  /*margin-left: 1%;*/
+  /*margin-top: 90px;*/
 }
 
 .directions {
-  position: absolute;
   font-size: 20px;
   color: #efb91f;
-  left: 250px;
-  top: 150px;
 
 }
 
@@ -171,7 +194,7 @@ body {
   color: silver;
   background-color: #efb91f;
   /*background-image: url('../images/dj-superstar-gold.png');*/
-  background-image: url('../images/gradient-record.png');
+  background-image: url('../images/dj-superstar-gold.jpg');
   border: 2px solid #efb91f;
   /*border: 2px solid black;*/
   display: inline-block;

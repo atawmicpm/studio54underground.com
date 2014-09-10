@@ -12,20 +12,16 @@
 
     <meta name="robots" content="noindex">
 
-    <!-- // <script async src="scripts/app.js"></script> -->
-
     <!-- TEMPLATES -->
     <script type="text/template" id="layout-template">
           <div class="container">
-            <ul class="nav navbar-nav">
-              <li id="nav-presales" class="active"><span class="shine"></span>PRESALES</li>
-              <li id="nav-lineup"><span class="shine"></span>LINEUP</li>
-              <!-- <li id="nav-artshow"><span class="shine"></span>ART SHOW</li> -->
-              <li id="nav-directions"><span class="shine"></span>DIRECTIONS & DETAILS</li>
-
-
-            </ul>   
-            <div id="error-message"></div>
+            <div id="buttons">
+              <ul class="nav navbar-nav">
+                <li id="nav-presales" class="active"><span class="shine"></span>PRESALES</li>
+                <li id="nav-lineup"><span class="shine"></span>LINEUP</li>
+                <li id="nav-directions"><span class="shine"></span>DIRECTIONS & DETAILS</li>
+              </ul>   
+            </div>
           </div>
       
         <div id="content"></div>
@@ -33,8 +29,12 @@
 
     <script type="text/template" id="lineup-template">
         <div id="presales">
-          <img id="logo" class="presales" src="images/dance_people.jpg">
 
+
+
+          <div id="buttons">
+          <ul>
+          <li>
           <form class="presale-form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
             <input type="hidden" name="cmd" value="_xclick">
             <input type="hidden" name="business" value="atawmicpm@gmail.com">
@@ -56,15 +56,22 @@
             <input type="hidden" name="bn" value="PP-BuyNowBF">
             <button type="image" class="presale-button" src="images/buy-now.png" border="0" name="submit">$20 Tickets</button>
             <img alt="" border="0" src="https://www.paypa" width="1" height="1">
-          </form>
-
-          <span class="presale-text">Limited capacity, 200 presales ONLY!</span>
+          </form>        
+          </li>
+          </ul>
+          </div>
+                <div id="buttons">
+          <ul>
+            <li class="party-date">OCT 4, 2014</li>
+          </ul>
+        </div>
         </div>
         <div id="lineup"></div>
         <div id="artshow"></div>
 
         <div id="directions">
-          <p class="directions">
+        <div id="buttons">
+        <ul><li class="directions">
             - Underground Oakland location.  10pm - 6am.
             <br>
             - Intelligent light extravaganza by Jimbo.
@@ -72,7 +79,8 @@
             - Directions will be emailed the night of.
             <br><br>
             Email Phillip to volunteer for a free ticket.  <br>atawmicpm at gmail dawt com.
-          </p>
+          </li></ul>
+          </div>
         </div>
     </script>
 
