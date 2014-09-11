@@ -78,10 +78,12 @@
 }
 
 .presale-text {
-  /*position: absolute;*/
+  position: absolute;
   /*height: 85px;*/
-  /*top: 100px;*/
+  top: 75px;
   /*left: 245px;*/
+
+  margin-left: 48.3%;
   z-index: -2001;
   font-size: 20px;
   font-family: 'Dosis', sans-serif;
