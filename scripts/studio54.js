@@ -13,11 +13,18 @@ var artists = new Artists([
     row: 1
   },
   {
-    name: 'Micron',
-    mix: 'https://soundcloud.com/la-cosa-nostra-micron',
-    photo: 'https://i1.sndcdn.com/avatars-000040396912-4jrsiz-t500x500.jpg',
+    name: 'BASEHEAD',
+    mix: 'https://soundcloud.com/baseheadmusic',
+    photo: '../images/grat.jpg',
+    col: 2,
+    row: 1
+  },
+  {
+    name: 'Influence',
+    mix: 'https://soundcloud.com/influence-2',
+    photo: 'https://i1.sndcdn.com/avatars-000041124403-fxrbrz-t500x500.jpg?e76cf77',
     col: 1,
-    row: 3
+    row: 2
   },
   {
     name: 'Joshuah Vincent',
@@ -27,39 +34,39 @@ var artists = new Artists([
     row: 2
   },
   {
-    name: 'Lick the DJ',
-    mix: 'https://soundcloud.com/lickthedj',
-    photo: 'https://i1.sndcdn.com/avatars-000001512740-lb7m6k-t500x500.jpg',
-    col: 2,
-    row: 3
-  },
-  {
     name: 'Alixr',
     mix: 'https://soundcloud.com/djalixr',
     photo: 'https://i1.sndcdn.com/avatars-000086799753-oqfeor-t500x500.jpg',
     col: 1,
-    row: 2
+    row: 3
   },
   {
-    name: 'Influence',
-    mix: 'https://soundcloud.com/influence-2',
-    photo: 'https://i1.sndcdn.com/avatars-000041124403-fxrbrz-t500x500.jpg?e76cf77',
+    name: 'Micron',
+    mix: 'https://soundcloud.com/la-cosa-nostra-micron',
+    photo: 'https://i1.sndcdn.com/avatars-000040396912-4jrsiz-t500x500.jpg',
     col: 2,
-    row: 1
+    row: 3
   },
   {
-    name: 'Kelee Silva',
-    mix: 'https://soundcloud.com/djkeleesilva',
-    photo: 'https://i1.sndcdn.com/avatars-000003531961-f3fid3-t500x500.jpg',
-    col: 2,
+    name: 'Lick the DJ',
+    mix: 'https://soundcloud.com/lickthedj',
+    photo: 'https://i1.sndcdn.com/avatars-000001512740-lb7m6k-t500x500.jpg',
+    col: 1,
     row: 4
   },
   {
     name: 'Lt. Daaan',
     mix: 'https://soundcloud.com/ltdaaan',
     photo: 'https://i1.sndcdn.com/avatars-000071834613-tiljds-t500x500.jpg',
-    col: 1,
+    col: 2,
     row: 4
+  },
+  {
+    name: 'Kelee Silva',
+    mix: 'https://soundcloud.com/djkeleesilva',
+    photo: 'https://i1.sndcdn.com/avatars-000003531961-f3fid3-t500x500.jpg',
+    col: 1,
+    row: 5
   }
 ]);
 
