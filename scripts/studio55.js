@@ -15,7 +15,7 @@ var artists = new Artists([
   {
     name: 'BASEHEAD',
     mix: 'https://soundcloud.com/baseheadmusic',
-    photo: '../images/grat.jpg',
+    photo: 'images/grat.jpg',
     col: 2,
     row: 1
   },
